@@ -33,5 +33,14 @@
               classpath="build/classes">
         </java>
     </target>
+    <target name="exe.constants" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="c03.p01.Constants"
+              classpath="build/classes">
+        </java>
+    </target>
+
+    
             
 </project>
