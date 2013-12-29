@@ -47,7 +47,11 @@
               classpath="build/classes">
         </java>
     </target>
-
-    
-            
+    <target name="exe.morestring" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="cj.c03.MoreString"
+              classpath="build/classes">
+        </java>
+    </target>
 </project>
