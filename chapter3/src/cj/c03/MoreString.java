@@ -1,4 +1,5 @@
 package cj.c03;
+import java.nio.charset.Charset;
 
 public class MoreString {
     public static void main(String[] args) {
@@ -19,6 +20,34 @@ public class MoreString {
         // use equels instead of '=='
         if (greeting.substring(0, 3).equals("Hel")) {
             System.out.println("They are same contents, use equals test contents");
+        }
+
+        testEncoding();
+    }
+    private static void testEncoding() {
+        System.out.println("---------------");
+        String s = "我爱你中国";
+        System.out.println("默认的编码格式Charset.defaultCharset()是一个cache的值，不一定受到file.encoding的影响");
+        System.out.println("默认的编码格式Charset.defaultCharset()是 " + Charset.defaultCharset());
+        System.out.println("s.getBytes() 等同于 s.getBytes(Charset.defaultCharset())");
+        System.out.println("---------------");
+        try {
+            // System.out.prinln("GBK==>Unicode==>UTF-8 Failed to show");
+            String s1 = new String(s.getBytes(), "UTF-8");
+            System.out.println(" GBK-->Unicode-->" + Charset.defaultCharset());
+            System.out.println(s1);
+
+            String s3 = new String(s.getBytes("UTF-8"));
+            System.out.println(" UTF-8-->Unicode-->" + Charset.defaultCharset());
+            System.out.println(s3);
+
+            String s5 = new String(s.getBytes("GBK"));
+            System.out.println(" GBK-->Unicode-->" + Charset.defaultCharset());
+            System.out.println(s5);
+        }
+        catch (Throwable e) {
+            System.out.println("Error " + e.getMessage());
+            e.printStackTrace();
         }
     }
 }

@@ -9,9 +9,10 @@
             description="Compiles the source code">
         <property file="build.properties" />
         <javac srcdir="${src.dir}" destdir="${classes.dir}" fork="true"
-               includeantruntime="true">
+               includeantruntime="true"
+               encoding="UTF-8">
             <compilerarg value="-J-Duser.language=en"/>
-            <compilerarg value="-J-Duser.country=GB"/>
+            <compilerarg value="-J-Duser.country=US"/>
         </javac>
     </target>
     <target name="archive" depends="compile"
@@ -30,7 +31,8 @@
             description="Run the program">
         <echo level="warning" message="running" />
         <java classname="cj.c03.FirstSample"
-              classpath="build/classes">
+              classpath="build/classes"
+              fork="true">
         </java>
     </target>
     <target name="exe.constants" depends="compile"
@@ -51,7 +53,11 @@
             description="Run the program">
         <echo level="warning" message="running" />
         <java classname="cj.c03.MoreString"
-              classpath="build/classes">
+              classpath="build/classes"
+              fork="true">
+            <jvmarg value="-Dfile.encoding=GBK" />
+            <jvmarg value="-Duser.country=US" />
+            <jvmarg value="-Duser.language=en" />
         </java>
     </target>
 </project>
