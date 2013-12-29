@@ -1,4 +1,4 @@
-package c03.p01;
+package cj.c03;
 
 public class FirstSample {
     public static void main(String[] args) {

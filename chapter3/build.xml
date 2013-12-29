@@ -29,14 +29,21 @@
     <target name="execute" depends="compile"
             description="Run the program">
         <echo level="warning" message="running" />
-        <java classname="c03.p01.FirstSample"
+        <java classname="cj.c03.FirstSample"
               classpath="build/classes">
         </java>
     </target>
     <target name="exe.constants" depends="compile"
             description="Run the program">
         <echo level="warning" message="running" />
-        <java classname="c03.p01.Constants"
+        <java classname="cj.c03.Constants"
+              classpath="build/classes">
+        </java>
+    </target>
+    <target name="exe.shift" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="cj.c03.Shift"
               classpath="build/classes">
         </java>
     </target>
