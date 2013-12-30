@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="secondbuild" default="execute">
+<project name="secondbuild" default="exe.array">
     <target name="init">
         <mkdir dir="build/classes"/>
         <mkdir dir="dist"/>
@@ -60,4 +60,13 @@
             <jvmarg value="-Duser.language=en" />
         </java>
     </target>
+    <target name="exe.array" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="cj.c03.ArrayTest"
+              classpath="build/classes"
+              fork="true">
+        </java>
+    </target>
+    
 </project>
