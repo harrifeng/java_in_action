@@ -19,6 +19,41 @@ public class EmployeeTest {
                                e.getHireDay());
         }
 
+        // As you do NOT return hireDay with clone, we can change it
+        // via following, breaking the encapsulation
+
+        //////////////////////////////////////////////////////////////////////
+        // +------------+                                                   //
+        // |Harry       |--------->+----------------------+                 //
+        // +------------+          |                      |                 //
+        //                         |    Employee          |                 //
+        //                         | +------------+       |                 //
+        // +------------+          | |  name      |       |                 //
+        // |d           +---+      | +------------+       |                 //
+        // +------------+   |      |                      |                 //
+        //                  |      | +------------+       |                 //
+        //                  |      | |  salary    |       |                 //
+        //                  |      | +------------+       |                 //
+        //                  |      |                      |                 //
+        //                  |      | +------------+       |                 //
+        //                  |      | |  hireDay   +---+   |                 //
+        //                  |      | +------------+   |   |                 //
+        //                  |      |                  |   |        +------+ //
+        //                  |      +------------------+---+        |      | //
+        //                  |                         |            | Date | //
+        //                  |                         |            |      | //
+        //                  |                         +----------->|      | //
+        //                  |                                      |      | //
+        //                  +------------------------------------->|      | //
+        //                                                         |      | //
+        //                                                         +------+ //
+        //////////////////////////////////////////////////////////////////////
+
+        Employee harry = new Employee("Harri", 2000000, 2008, 7, 4);
+        Date d = harry.getHireDay();
+        double tenYearsInMilliSeconds = 10 * 365.25 * 24 * 60 * 60 * 1000;
+        d.setTime(d.getTime() - (long) tenYearsInMilliSeconds);
+        System.out.println("Harry First on board date is " + harry.getHireDay());
     }
 }
 
@@ -45,6 +80,8 @@ class Employee {
     }
 
     public Date getHireDay() {
+        //False way, should use cloen
+        // return hireDay.clone();
         return hireDay;
     }
 
