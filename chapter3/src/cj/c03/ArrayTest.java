@@ -53,5 +53,32 @@ public class ArrayTest {
         System.out.println("old length is " + luckyNumbers.length);
         luckyNumbers = Arrays.copyOf(luckyNumbers, 2 * luckyNumbers.length);
         System.out.println("new length is " + luckyNumbers.length);
+
+
+        int[][] magicSquare =
+            {
+                {16, 3, 2, 13},
+                {5, 10, 11, 8},
+                {9, 6, 7, 12},
+                {4, 15, 14, 1}
+            };
+        System.out.println(Arrays.deepToString(magicSquare));
+
+        /////////////////////////////////////////////////////////////
+        // java's array is pointers's collection, you can define a //
+        // multidimensional arrays like following                  //
+        // [[0],                                                   //
+        //  [0, 0],                                                //
+        //  [0, 0, 0],                                             //
+        //  [0, 0, 0, 0],                                          //
+        //  [0, 0, 0, 0, 0]]                                       //
+        /////////////////////////////////////////////////////////////
+        final int NMAX = 4;
+        int[][] odds = new int[NMAX + 1][];
+        for (int n = 0; n <= NMAX; n++) {
+            odds[n] = new int[n+1];
+        }
+        System.out.println(Arrays.deepToString(odds));
+
     }
 }
