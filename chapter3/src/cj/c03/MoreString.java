@@ -34,7 +34,7 @@ public class MoreString {
         try {
             // System.out.prinln("GBK==>Unicode==>UTF-8 Failed to show");
             String s1 = new String(s.getBytes(), "UTF-8");
-            System.out.println(" GBK-->Unicode-->" + Charset.defaultCharset());
+            System.out.println(Charset.defaultCharset() + "-->Unicode-->UTF-8");
             System.out.println(s1);
 
             String s3 = new String(s.getBytes("UTF-8"));
