@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="secondbuild" default="exe.employee">
+<project name="secondbuild" default="exe.para">
     <target name="init">
         <mkdir dir="build/classes"/>
         <mkdir dir="dist"/>
@@ -31,6 +31,14 @@
             description="Run the program">
         <echo level="warning" message="running" />
         <java classname="cj.c04.EmployeeTest"
+              classpath="build/classes"
+              fork="true">
+        </java>
+    </target>
+    <target name="exe.para" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="cj.c04.ParamTest"
               classpath="build/classes"
               fork="true">
         </java>
