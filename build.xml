@@ -82,4 +82,13 @@
               fork="true">
         </java>
     </target>
+
+    <target name="leet.test" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="oj.leet.lswrc.Solution"
+              classpath="build/classes"
+              fork="true">
+        </java>
+    </target>
 </project>

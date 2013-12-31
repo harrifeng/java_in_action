@@ -27,7 +27,7 @@ public class ParamTest {
         System.out.println("End of method: x=" + x);
     }
     public static void tripleSalary(Employee x) {// works
-        x.raiseSalary(200);
+        x.raiseSalary(20);
         System.out.println("End of method: salary=" + x.getSalary());
     }
     public static void swap(Employee x, Employee y) {//does not work
