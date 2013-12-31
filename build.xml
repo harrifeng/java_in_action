@@ -1,12 +1,29 @@
 <?xml version="1.0" ?>
-<project name="java_in_action" default="exe.array">
-    <target name="init">
-        <mkdir dir="build/classes"/>
-        <mkdir dir="dist"/>
+<project name="java_in_action" default="compile">
+    <import file="xml/init.xml"/>
+
+    <path id="compile.classpath">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="test.compile.classpath">
+        <path refid="compile.classpath"/>
+        <pathelement location="${build.classes.dir}"/>
+    </path>
+
+    <path id="test.classpath">
+        <path refid="test.compile.classpath"/>
+        <pathelement location="${test.classes.dir}"/>
+    </path>    
+
+    <target name="test-init">
+        <mkdir dir="${test.classes.dir}"/>
     </target>
+    
     <target name="compile" depends="init"
             description="Compiles the source code">
-        <property file="build.properties" />
         <javac srcdir="${src.dir}" destdir="${classes.dir}" fork="true"
                includeantruntime="true"
                encoding="UTF-8">
@@ -14,81 +31,13 @@
             <compilerarg value="-J-Duser.country=US"/>
         </javac>
     </target>
-    <target name="archive" depends="compile"
-            description="Creates the JAR file">
-        <jar destfile="dist/project.jar"
-             basedir="build/classes"/>
-    </target>
-    <target name="clean" depends="init"
-            description="Removes the temporary directories used">
-        <delete dir="build" />
-        <delete dir="dist" />
-    </target>
 
-    <target name="execute" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="cj.c03.FirstSample"
-              classpath="build/classes"
-              fork="true">
-        </java>
-    </target>
-    <target name="exe.constants" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="cj.c03.Constants"
-              classpath="build/classes">
-        </java>
-    </target>
-    <target name="exe.shift" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="cj.c03.Shift"
-              classpath="build/classes">
-        </java>
-    </target>
-    <target name="exe.morestring" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="cj.c03.MoreString"
-              classpath="build/classes"
-              fork="true">
-            <jvmarg value="-Dfile.encoding=GBK" />
-            <jvmarg value="-Duser.country=US" />
-            <jvmarg value="-Duser.language=en" />
-        </java>
-    </target>
-    <target name="exe.array" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="cj.c03.ArrayTest"
-              classpath="build/classes"
-              fork="true">
-        </java>
-    </target>
-    <target name="exe.employee" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="cj.c04.EmployeeTest"
-              classpath="build/classes"
-              fork="true">
-        </java>
-    </target>
-    <target name="exe.para" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="cj.c04.ParamTest"
-              classpath="build/classes"
-              fork="true">
-        </java>
-    </target>
-
-    <target name="leet.test" depends="compile"
-            description="Run the program">
-        <echo level="warning" message="running" />
-        <java classname="oj.leet.lswrc.Solution"
-              classpath="build/classes"
-              fork="true">
-        </java>
-    </target>
+    <target name="test-compile" depends="compile,test-init">
+        <javac destdir="${test.classes.dir}"
+               debug="true"
+               includeAntRuntime="true"
+               srcdir="test">
+            <classpath refid="test.compile.classpath"/>
+        </javac>
+    </target>    
 </project>

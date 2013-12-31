@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<project name="base" default="default">
+
+    <echo>Building ant file </echo>
+
+    <property file="build.properties"/>
+    <property file="root.dir" location=".."/>
+
+    <target name="default" depends="all"
+            description="default : build 'all'"/>
+
+    <target name="dist" description="Build the distribution"/>
+    <target name="all" description="Build Everyting" depends="dist"/>
+
+    <target name="clean" description="clean up"/>
+</project>    
