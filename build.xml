@@ -1,10 +1,9 @@
 <?xml version="1.0" ?>
-<project name="secondbuild" default="exe.array">
+<project name="java_in_action" default="exe.array">
     <target name="init">
         <mkdir dir="build/classes"/>
         <mkdir dir="dist"/>
     </target>
-
     <target name="compile" depends="init"
             description="Compiles the source code">
         <property file="build.properties" />
@@ -20,7 +19,6 @@
         <jar destfile="dist/project.jar"
              basedir="build/classes"/>
     </target>
-
     <target name="clean" depends="init"
             description="Removes the temporary directories used">
         <delete dir="build" />
@@ -68,5 +66,20 @@
               fork="true">
         </java>
     </target>
-    
+    <target name="exe.employee" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="cj.c04.EmployeeTest"
+              classpath="build/classes"
+              fork="true">
+        </java>
+    </target>
+    <target name="exe.para" depends="compile"
+            description="Run the program">
+        <echo level="warning" message="running" />
+        <java classname="cj.c04.ParamTest"
+              classpath="build/classes"
+              fork="true">
+        </java>
+    </target>
 </project>
