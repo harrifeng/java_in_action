@@ -15,6 +15,7 @@ public class Solution {
             if (index[(int)s.charAt(i)] != -1) {
                 max = Math.max(max, len);
                 len = 0;
+                //be careful to change i first, then reinitialize the array
                 i = index[(int)s.charAt(i)] + 1;
                 Arrays.fill(index, -1);
             }

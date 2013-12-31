@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.After;
 import oj.leet.lswrc.*;
 
+import static org.junit.Assert.assertEquals;
+
 /** 
  * Solution Tester. 
  * 
@@ -29,7 +31,8 @@ public class SolutionTest {
     @Test
     public void testLengthOfLongestSubstring() throws Exception {
         Solution solution = new Solution();
-        //TODO: Test goes here... 
+        //TODO: Test goes here...
+        assertEquals(12, solution.lengthOfLongestSubstring("wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorellnmpapqfwkhopkmco"));
     } 
 
 } 
