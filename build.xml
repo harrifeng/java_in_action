@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="java_in_action" default="compile">
+<project name="java_in_action" default="test-compile">
     <import file="xml/init.xml"/>
 
     <path id="compile.classpath">
@@ -18,7 +18,8 @@
         <pathelement location="${test.classes.dir}"/>
     </path>    
 
-    <target name="test-init">
+    <target name="test-init"
+            description="prepare dir for test" >
         <mkdir dir="${test.classes.dir}"/>
     </target>
     
@@ -32,7 +33,8 @@
         </javac>
     </target>
 
-    <target name="test-compile" depends="compile,test-init">
+    <target name="test-compile" depends="compile,test-init"
+            description="ready all the test classes" >
         <javac destdir="${test.classes.dir}"
                debug="true"
                includeAntRuntime="true"
