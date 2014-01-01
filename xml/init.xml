@@ -5,8 +5,12 @@
 
     <property name="build.dir" location="build" />
     <property name="build.classes.dir" location="${build.dir}/classes" />
+
     <property name="test.dir" location="${build.dir}/test" />
     <property name="test.classes.dir" location="${test.dir}/classes" />
+    <property name="test.data.dir" location="${test.dir}/data"/>
+    <property name="test.reports.dir" location="${test.dir}/reports"/>
+    
 
     <target name="init" >
         <mkdir dir="${build.dir}"/>
@@ -14,9 +18,9 @@
         <!-- <mkdir dir="${dist.dir}"/> -->
         <!-- <mkdir dir="${dist.doc.dir}"/> -->
         <!-- <mkdir dir="${javadoc.dir}"/> -->
-        <!-- <mkdir dir="${test.classes.dir}"/> -->
-        <!-- <mkdir dir="${test.reports.dir}"/> -->
-        <!-- <mkdir dir="${test.data.dir}"/> -->
+        <mkdir dir="${test.classes.dir}"/>
+        <mkdir dir="${test.reports.dir}"/>
+        <mkdir dir="${test.data.dir}"/>
     </target>
 
     <!-- this is an override of clean -->

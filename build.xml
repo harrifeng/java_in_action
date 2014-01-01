@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="java_in_action" default="test-compile">
+<project name="java_in_action" default="test">
     <import file="xml/init.xml"/>
 
     <path id="compile.classpath">
@@ -16,11 +16,15 @@
     <path id="test.classpath">
         <path refid="test.compile.classpath"/>
         <pathelement location="${test.classes.dir}"/>
-    </path>    
+    </path>
 
-    <target name="test-init"
-            description="prepare dir for test" >
+
+    <target name="test-init" description="prepare dir for test" >
         <mkdir dir="${test.classes.dir}"/>
+        <delete dir="${test.data.dir}"/>
+        <delete dir="${test.reports.dir}"/>
+        <mkdir dir="${test.data.dir}"/>
+        <mkdir dir="${test.reports.dir}"/>
     </target>
     
     <target name="compile" depends="init"
@@ -41,5 +45,19 @@
                srcdir="test">
             <classpath refid="test.compile.classpath"/>
         </javac>
-    </target>    
+    </target>
+    
+    <!-- Test and build all files  -->
+    <!-- To run this: use "ant" (default) or "ant run" -->
+    <target name="test" depends="test-compile">
+        <junit printsummary="yes" fork="yes" haltonfailure="yes">
+            <classpath>
+                <path refid="test.classpath" />
+            </classpath>
+            <formatter type="plain"/>
+            <test name="oj.leet.mtsa.SolutionTest" todir="${test.reports.dir}"/>
+            <test name="oj.leet.lswrc.SolutionTest" todir="${test.reports.dir}"/>
+        </junit>        
+    </target>
+    
 </project>

@@ -1,4 +1,4 @@
-package test.oj.leet.mtsa;
+package oj.leet.mtsa;
 
 import org.junit.Test;
 import org.junit.Before;

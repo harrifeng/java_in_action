@@ -1,4 +1,4 @@
-package test.oj.leet.lswrc; 
+package oj.leet.lswrc;
 
 import org.junit.Test; 
 import org.junit.Before; 
