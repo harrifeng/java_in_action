@@ -57,6 +57,8 @@
             <formatter type="plain"/>
             <test name="oj.leet.mtsa.SolutionTest" todir="${test.reports.dir}"/>
             <test name="oj.leet.lswrc.SolutionTest" todir="${test.reports.dir}"/>
+            <test name="oj.leet.mtsa.SolutionTest" todir="${test.reports.dir}"/>
+            <test name="oj.leet.atn.SolutionTest" todir="${test.reports.dir}"/>
         </junit>        
     </target>
     
