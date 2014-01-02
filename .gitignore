@@ -7,3 +7,4 @@
 .idea
 src/test/
 build/
+lib/junit-4.11.jar
