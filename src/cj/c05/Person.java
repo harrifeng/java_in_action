@@ -1,5 +1,7 @@
 package cj.c05;
 
+import java.util.Objects;
+
 /**
  * Created by hfeng on 14-1-4.
  */
@@ -24,5 +26,30 @@ public abstract class Person {
 
     public String getName() {
         return name;
+    }
+
+
+    public boolean equals(Object otherObject) {
+        //a quick test to see if the objects are identical
+        if (this == otherObject) {
+            return true;
+        }
+
+        //must return false if the explicit parameter is null
+        if (otherObject == null) {
+            return false;
+        }
+
+        // if the classes don't match, they can't be equal
+        if (getClass() != otherObject.getClass()) {
+            return false;
+        }
+
+        // now we know otherObject is a non-null Employee
+        Person other = (Person) otherObject;
+
+        // test whether the fields have identical values;
+        return Objects.equals(name, other.name);
+
     }
 }

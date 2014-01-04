@@ -18,4 +18,21 @@ public class Manager extends Employee{
         super(n, s, year, month, day);
         bonus = 0;
     }
+
+    public boolean equals(Object otherObject) {
+        if (!super.equals(otherObject)) {
+            return false;
+        }
+        Manager other = (Manager) otherObject;
+
+        return bonus == other.bonus;
+    }
+
+    public  int hashCode() {
+        return super.hashCode() + 17 * new Double(bonus).hashCode();
+    }
+
+    public String toSting() {
+        return super.toString() + "[bonus=" + bonus + "]";
+    }
 }

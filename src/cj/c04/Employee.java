@@ -4,6 +4,7 @@ import cj.c05.Person;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 /**
  * Created by hfeng on 14-1-3.
@@ -45,5 +46,23 @@ public class Employee  extends Person {
 
     public String getDescription() {
         return String.format("an employee with a salary of $%.2f", salary);
+    }
+
+    public boolean equals(Object otherObject) {
+        if (!super.equals(otherObject)) {
+            return false;
+        }
+        Employee other = (Employee) otherObject;
+
+        return salary == other.salary && Objects.equals(hireDay, other.hireDay);
+    }
+
+    public int hashCode() {
+        return  Objects.hash(super.getName(), salary, hireDay);
+    }
+
+    public String toString() {
+        return getClass().getName() + "[name=" + super.getName() + ",salary="
+                + salary + ", hireDay=" + hireDay + "]";
     }
 }
