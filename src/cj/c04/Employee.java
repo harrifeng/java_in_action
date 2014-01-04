@@ -1,5 +1,7 @@
 package cj.c04;
 
+import cj.c05.Person;
+
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -7,28 +9,23 @@ import java.util.GregorianCalendar;
  * Created by hfeng on 14-1-3.
  */
 
-public class Employee {
-    private String name;
+public class Employee  extends Person {
     private double salary;
     private Date hireDay;
 
     public Employee() {
-        name = "default";
+        super("default");
         salary = 100.0;
         hireDay = new GregorianCalendar().getTime();
     }
 
     public Employee(String n, double s, int year, int month, int day) {
-        name = n;
+        super(n);
         salary = s;
         GregorianCalendar calendar = new GregorianCalendar(year, month - 1,
                 day);
         // GregorianCalendar uses 0 for January
         hireDay = calendar.getTime();
-    }
-
-    public String getName() {
-        return name;
     }
 
     public double getSalary() {
@@ -44,5 +41,9 @@ public class Employee {
     public void raiseSalary(double byPercent) {
         double raise = salary * byPercent / 100;
         salary += raise;
+    }
+
+    public String getDescription() {
+        return String.format("an employee with a salary of $%.2f", salary);
     }
 }
