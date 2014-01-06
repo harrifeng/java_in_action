@@ -10,7 +10,7 @@ import java.util.Objects;
  * Created by hfeng on 14-1-3.
  */
 
-public class Employee  extends Person {
+public class Employee extends Person  implements Comparable<Employee> {
     private double salary;
     private Date hireDay;
 
@@ -27,6 +27,11 @@ public class Employee  extends Person {
                 day);
         // GregorianCalendar uses 0 for January
         hireDay = calendar.getTime();
+    }
+    public Employee(String n, double s) {
+        super(n);
+        salary = s;
+        hireDay = new GregorianCalendar().getTime();
     }
 
     public double getSalary() {
@@ -64,5 +69,9 @@ public class Employee  extends Person {
     public String toString() {
         return getClass().getName() + "[name=" + super.getName() + ",salary="
                 + salary + ", hireDay=" + hireDay + "]";
+    }
+
+    public int compareTo(Employee other) {
+        return Double.compare(salary, other.salary);
     }
 }
