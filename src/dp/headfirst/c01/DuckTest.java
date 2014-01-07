@@ -8,6 +8,6 @@ public class DuckTest {
         RubberDuck rb = new RubberDuck();
         rb.quack();
         rb.display();
-        rb.fly();  //oh, no it can not fly
+        rb.fly(); // not fly now
     }
 }

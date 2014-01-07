@@ -14,4 +14,7 @@ public class RubberDuck extends Duck{
     public void quack() {
         System.out.println("Can not quack, Squeak");
     }
+    public void fly() {
+        // do nothing
+    }
 }
