@@ -20,6 +20,9 @@ public abstract class Duck {
     public void swim() {
         System.out.println("swim");
     }
+    public void fly() {
+        System.out.println("fly");
+    }
 
     public abstract void display();
 }
