@@ -1,23 +1,30 @@
 package oj.mycode.rbn;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
-/**
- * Created by hfeng on 14-1-8.
- */
 public class MySolution {
     public void rotateArray(int[][] arr) {
-        arr[0][0] = 123;
+        int size = arr.length;
+        for (int i = 0; i < size; i++) {
+            System.out.println(Arrays.toString(arr[i]));
+        }
+        System.out.println("------------------");
+        
+        for (int i = 0; i < size / 2; i++) {
+            int count = size - i - 1 ;
+            for (int j = i; j < count ; j++) {
+                int tmp = arr[i][i+j];
+                arr[i][i+j] = arr[count-j][i];
+                arr[count-j][i] = arr[count][count-j];
+                arr[count][count-j] = arr[i+j][count];
+                arr[i+j][count] = tmp;
+            }
+        }
 
-
-    }
-
-    public static void main(String[] args) {
-        MySolution ms = new MySolution();
-        int[][] arr = {{1, 2, 3}, {1, 2, 3}, {1, 2}, {1,2,3,4}};
-        ms.rotateArray(arr);
-        System.out.println(Arrays.deepToString(arr));
-        System.out.println(arr[0].length);
-        System.out.println(arr.length);
+        for (int i = 0; i < size; i++) {
+            System.out.println(Arrays.toString(arr[i]));
+        }
+        System.out.println();
     }
 }
