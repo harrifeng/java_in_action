@@ -3,7 +3,6 @@ package oj.leet.mtsa;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
-import oj.leet.mtsa.*;
 
 import static org.junit.Assert.assertEquals;
 

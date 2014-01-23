@@ -26,16 +26,14 @@ public class SolutionTest {
     @Test
     public void testIsMatch() throws Exception {
         Solution solution = new Solution();
-//        org.junit.Assert.assertFalse(solution.isMatch("aa", "a"));
-//        org.junit.Assert.assertFalse(solution.isMatch("aaa", "a"));
-//
-//        org.junit.Assert.assertTrue(solution.isMatch("aa", "aa"));
-//        org.junit.Assert.assertTrue(solution.isMatch("aa", "a*"));
-//
-//        org.junit.Assert.assertTrue(solution.isMatch("ab", ".*"));
-//        org.junit.Assert.assertTrue(solution.isMatch("aab", "c*a*b"));
+        org.junit.Assert.assertFalse(solution.isMatch("aa", "a"));
+        org.junit.Assert.assertFalse(solution.isMatch("aaa", "a"));
 
+        org.junit.Assert.assertTrue(solution.isMatch("aa", "aa"));
+        org.junit.Assert.assertTrue(solution.isMatch("aa", "a*"));
         org.junit.Assert.assertTrue(solution.isMatch("aaa", "a*a"));
+        org.junit.Assert.assertTrue(solution.isMatch("ab", ".*"));
+        org.junit.Assert.assertTrue(solution.isMatch("aab", "c*a*b"));
 
     }
 }
