@@ -16,6 +16,9 @@ public class Solution {
         for (int i = 0; i < num.length - 2; i++) {
             while ( i > 0 && num[i] == num[i-1]) {
                 i++;
+                if (i == num.length -2) {
+                    break;
+                }
             }
             int beg = i+1;
             int end = num.length - 1;
@@ -40,10 +43,4 @@ public class Solution {
         return ret;
     }
 
-    public static void main(String[] args) {
-        int[] n = {1, 7, 3, 4, -8};
-
-        Solution solution = new Solution();
-        System.out.println(solution.threeSum(n));
-    }
 }
