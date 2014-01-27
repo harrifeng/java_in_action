@@ -2,6 +2,7 @@
     <import file="base.xml" />
 
     <property name="src.dir" location="src" />
+    <property name="classes.dir" location="build/classes" />
 
     <property name="build.dir" location="build" />
     <property name="build.classes.dir" location="${build.dir}/classes" />

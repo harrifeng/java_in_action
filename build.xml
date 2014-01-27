@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<project name="java_in_action" default="test">
+<project name="java_in_action" default="default">
     <import file="xml/init.xml"/>
 
     <path id="compile.classpath">
@@ -18,7 +18,12 @@
         <pathelement location="${test.classes.dir}"/>
     </path>
 
+    <!-- this is an override of default -->
+    <target name="default" depends="test"
+            description="Default to run, now it to test all testcases.">
+    </target>    
 
+    
     <target name="test-init" description="prepare dir for test" >
         <mkdir dir="${test.classes.dir}"/>
         <delete dir="${test.data.dir}"/>
@@ -60,6 +65,10 @@
                 <fileset dir="${test.classes.dir}" includes="**/*Test.class" />
             </batchtest>
         </junit>        
+    </target>
+
+    <target name="try">
+        <echo>${classes.dir}</echo>
     </target>
     
 </project>
