@@ -1,7 +1,5 @@
 package oj.leet.rti;
 
-import sun.net.www.content.text.plain;
-
 /**
  * Created by hfeng on 14-1-22.
  */

@@ -42,7 +42,8 @@
         <javac destdir="${test.classes.dir}"
                debug="true"
                includeAntRuntime="true"
-               srcdir="test">
+               srcdir="test"
+               encoding="UTF-8">
             <classpath refid="test.compile.classpath"/>
         </javac>
     </target>

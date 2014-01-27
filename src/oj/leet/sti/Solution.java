@@ -1,7 +1,5 @@
 package oj.leet.sti;
 
-import sun.rmi.server.InactiveGroupException;
-
 /**
  * Created by hfeng on 14-1-7.
  */
