@@ -81,8 +81,37 @@ public class SolutionTest {
         System.out.println("expected is:" + alal);
 
         org.junit.Assert.assertEquals(soal, alal);
+
+        int[] a4 = {-2,0,0,2,2};
+        ArrayList<Integer> al4 = new ArrayList<Integer>();
+
+        al4.add(-2);
+        al4.add(0);
+        al4.add(2);
+
+        result1.add(al4);
+
+        alal.clear();
+        soal.clear();
+
+        alal.add(al4);
+        soal = solution.threeSum(a4);
+
+        System.out.println("------------");
+        System.out.println("result is  :" + soal);
+        System.out.println("expected is:" + alal);
+
+        assertEquals(alal.size(), soal.size());
+        soal.removeAll(alal);
+        alal.removeAll(solution.threeSum(a4));
+
+        System.out.println("------------");
+        System.out.println("result is  :" + soal);
+        System.out.println("expected is:" + alal);
+
+
+        assertEquals(soal, alal);
+
     }
 
-
-
-} 
+}

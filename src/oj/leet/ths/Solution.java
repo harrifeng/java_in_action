@@ -13,26 +13,28 @@ public class Solution {
 
         Arrays.sort(num);
 
-        for (int i = 0; i < num.length - 2; i++) {
-            while ( i > 0 && num[i] == num[i-1]) {
+        for (int i = 0; i < num.length; i++) {
+            while ( i > 0 && i < num.length && num[i] == num[i-1]) {
                 i++;
-                if (i == num.length -2) {
-                    break;
-                }
             }
             int beg = i+1;
             int end = num.length - 1;
-            int target = 0 - num[i];
             while (beg < end) {
-                if (num[beg] + num[end] == target) {
+                int sum = num[beg] + num[end];
+
+                if (sum + num[i] == 0) {
                     ArrayList<Integer> al = new ArrayList<Integer>();
                     al.add(num[i]);
                     al.add(num[beg]);
                     al.add(num[end]);
                     ret.add(al);
+                    while ( beg < end && num[beg] ==num[beg+1] && num[end] == num[end-1]) {
+                        beg++;
+                        end--;
+                    }
                     beg++;
                     end--;
-                } else if (num[beg] + num[end] < target) {
+                } else if (sum + num[i] < 0) {
                     beg++;
                 } else {
                     end--;
@@ -42,5 +44,4 @@ public class Solution {
 
         return ret;
     }
-
 }
