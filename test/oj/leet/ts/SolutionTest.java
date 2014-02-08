@@ -4,6 +4,9 @@ import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Assert.*;
+
+import static org.junit.Assert.assertArrayEquals;
+
 /**
  * Solution Tester.
  *
@@ -25,7 +28,7 @@ public class SolutionTest {
      */
     @Test
     public void testTwoSum() throws Exception {
-        //TODO: Test goes here...
+
         Solution solution = new Solution();
         int[] n1 = {2, 7, 11, 15};
         int t1 = 9;
@@ -35,8 +38,8 @@ public class SolutionTest {
         int t2 = 100;
         int [] r2 = {2, 3};
 
-        org.junit.Assert.assertArrayEquals(r1, solution.twoSum(n1, t1));
-        org.junit.Assert.assertArrayEquals(r2, solution.twoSum(n2, t2));
+        assertArrayEquals(r1, solution.twoSum(n1, t1));
+        assertArrayEquals(r2, solution.twoSum(n2, t2));
     }
 
 } 
