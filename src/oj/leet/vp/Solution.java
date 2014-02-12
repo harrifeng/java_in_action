@@ -2,9 +2,6 @@ package oj.leet.vp;
 
 import java.util.Stack;
 
-/**
- * Created by hfeng on 14-2-11.
- */
 public class Solution {
     public boolean isValid(String s) {
         if (s.length() == 0) {
