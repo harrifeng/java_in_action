@@ -1,4 +1,4 @@
-package dp.headfirst.c01;
+package dp.headfirst.c01.p01;
 
 /**
  * Created by hfeng on 1/7/14.
