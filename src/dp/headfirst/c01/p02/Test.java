@@ -12,5 +12,10 @@ public class Test {
         Duck rubber = new RubberDuck();
         rubber.preformFly();
         rubber.preformQuack();
+
+        Duck model = new ModelDuck();
+        model.preformFly();
+        model.setFlyBehavior(new FlyRocketPowered());
+        model.preformFly();
     }
 }

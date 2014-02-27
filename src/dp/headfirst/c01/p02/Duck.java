@@ -20,4 +20,12 @@ public abstract class Duck {
     }
 
     abstract void display();
+
+    public void setFlyBehavior(FlyBehavior fb) {
+        flyBehavior = fb;
+    }
+
+    public void setQuackBehavior(QuackBehavior qb) {
+        quackBehavior = qb;
+    }
 }
