@@ -1,0 +1,9 @@
+@startdot
+digraph G {
+    node[shape="record",fontname="Consolas",fontsize=16]
+    node_Duck [
+         label="{Duck|FlyBehavior flyBehavior\n QuackBehavior quackBehavior|swim()\l}"
+
+    ]
+}
+@enddot
