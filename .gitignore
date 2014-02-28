@@ -8,3 +8,5 @@
 src/test/
 build/
 lib/junit-4.11.jar
+out
+*.dot
