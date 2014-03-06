@@ -1,4 +1,4 @@
-package cj.c05;
+package lang.cj.c05;
 
 import java.util.Objects;
 

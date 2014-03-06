@@ -1,4 +1,4 @@
-package cj.c03;
+package lang.cj.c03;
 public class Shift {
     public static void main(String[] args) {
         /////////////////////////////////////////////////////////////

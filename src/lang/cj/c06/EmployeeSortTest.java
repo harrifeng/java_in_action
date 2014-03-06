@@ -1,6 +1,6 @@
-package cj.c06;
+package lang.cj.c06;
 
-import cj.c04.Employee;
+import lang.cj.c04.Employee;
 
 import java.util.Arrays;
 

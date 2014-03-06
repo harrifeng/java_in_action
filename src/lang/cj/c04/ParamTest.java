@@ -1,4 +1,4 @@
-package cj.c04;
+package lang.cj.c04;
 
 public class ParamTest {
     public static void main(String[] args) {

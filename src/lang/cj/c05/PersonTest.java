@@ -1,6 +1,6 @@
-package cj.c05;
+package lang.cj.c05;
 
-import cj.c04.Employee;
+import lang.cj.c04.Employee;
 
 /**
  * Created by hfeng on 14-1-4.

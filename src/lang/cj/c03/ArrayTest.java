@@ -1,4 +1,4 @@
-package cj.c03;
+package lang.cj.c03;
 import java.util.*;
 
 public class ArrayTest {

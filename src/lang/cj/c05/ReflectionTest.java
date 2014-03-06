@@ -1,4 +1,4 @@
-package cj.c05;
+package lang.cj.c05;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

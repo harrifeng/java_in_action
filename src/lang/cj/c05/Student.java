@@ -1,4 +1,4 @@
-package cj.c05;
+package lang.cj.c05;
 
 public class Student extends Person {
     private String major;

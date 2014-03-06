@@ -1,4 +1,4 @@
-package cj.c03;
+package lang.cj.c03;
 
 public class FirstSample {
     public static void main(String[] args) {

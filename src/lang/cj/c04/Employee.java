@@ -1,6 +1,6 @@
-package cj.c04;
+package lang.cj.c04;
 
-import cj.c05.Person;
+import lang.cj.c05.Person;
 
 import java.util.Date;
 import java.util.GregorianCalendar;
