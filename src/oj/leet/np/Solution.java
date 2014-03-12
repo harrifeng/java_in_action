@@ -28,8 +28,8 @@ public class Solution {
             }
         }
 
-        // reverse the array
-
+        // if the whole array is all in descending order(can't become bigger),
+        // you have to reverse the whole array
         for (int i = 0; i < num.length / 2; i++) {
             int temp = num[i];
             num[i] = num[num.length - i - 1];
