@@ -1,33 +1,40 @@
 package oj.leet.np;
 
 import java.util.Arrays;
+import java.util.List;
 
-/**
- * Created by hfeng on 14-1-2.
- */
-
-/*      1,2,3 → 1,3,2
-        3,2,1, → 1,2,3
-        1, 2, 3, 4, 5
-        1, 3, 4, 5, 2
-        1, 4, 5, 2, 3
-        1, 5, 2, 3, 4
-        1,1,0,5 → 1,5,1*/
 public class Solution {
     public static void nextPermutation(int[] num) {
-        if (num.length < 3) {
+        if (num.length <= 1) {
             return;
         }
-        for (int i = 2; i < num.length; i++) {
-            if (num[i] > num[1]) {
 
+        for (int i = num.length - 2; i >= 0; i--) {
+            if (num[i] < num[i+1]) {
+                int j;
+                for (j = num.length - 1; j >= i; j--) {
+                    if (num[i] < num[j]) {
+                        break;
+                    }
+                }
+                // swap the two numbres
+                int temp = num[i];
+                num[i] = num[j];
+                num[j] = temp;
+
+                // sort the rest of arrays after the swap point
+                Arrays.sort(num, i+1, num.length);
+                return;
             }
         }
-    }
 
-    public static void main(String[] args) {
-        int[] n = {1, 2, 3, 4};
-        nextPermutation(n);
-        System.out.println(Arrays.toString(n));
+        // reverse the array
+
+        for (int i = 0; i < num.length / 2; i++) {
+            int temp = num[i];
+            num[i] = num[num.length - i - 1];
+            num[num.length - i - 1] = temp;
+        }
+        return;
     }
 }

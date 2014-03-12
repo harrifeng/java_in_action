@@ -1,8 +1,5 @@
 package oj.leet.ri;
 
-/**
- * Created by hfeng on 14-1-7.
- */
 public class Solution {
     public int reverse(int x) {
 
