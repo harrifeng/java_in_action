@@ -1,8 +1,5 @@
 package oj.leet.sti;
 
-/**
- * Created by hfeng on 14-1-7.
- */
 public class Solution {
     public int atoi(String str) {
         if (str.length() == 0) {
@@ -22,18 +19,17 @@ public class Solution {
         }
         int len = str.length();
         for(int i = start; i < len; i++) {
-            if (str.charAt(i) >= '0' && str.charAt(i) <= '9') {
+            if (Character.isDigit(str.charAt(i))) {
                 if (result > Integer.MAX_VALUE / 10
                     || result == Integer.MAX_VALUE / 10
-                    && str.charAt(i) - '0' > Integer.MAX_VALUE % 10) {
+                    && Character.getNumericValue(str.charAt(i)) > Integer.MAX_VALUE % 10) {
                     return negVal ? Integer.MIN_VALUE : Integer.MAX_VALUE;
                 }
-                result = result * 10 + (str.charAt(i) - '0');
+                result = result * 10 + Character.getNumericValue(str.charAt(i));
             } else {
                 break;
             }
         }
-
         return negVal ? result * -1 : result;
     }
 }
