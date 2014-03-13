@@ -34,6 +34,6 @@ public class SolutionTest {
         assertEquals(1, solution.atoi("+1"));
         assertEquals(-4321, solution.atoi("   -4321"));
         assertEquals(Integer.MAX_VALUE, solution.atoi("123456789999"));
+        assertEquals(-2147483647, solution.atoi("-2147483647"));
     }
-
 }
