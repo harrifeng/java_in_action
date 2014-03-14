@@ -8,22 +8,23 @@ public class Solution {
         if (x < 0) {
             return  false;
         }
-        int num = x;
+
         int times = 1;
+        int tmp = x;
         // 10 is very easily to be ignored, it is 2-digit number
-        while (x >= 10) {
+        while (tmp >= 10) {
             times *= 10;
-            x = x / 10;
+            tmp = tmp / 10;
         }
 
-        while (num >= 10) {
-            int front = num / times;
-            int back = num % 10;
-            if (front != back) {
+        while (x >= 10) {
+            int beg = x / times;
+            int end = x % 10;
+            if (beg != end) {
                 return false;
             }
-            num = num / 10 - front * times;
-            times = num / 100;
+            x = x % times / 10;
+            times = times / 100;
         }
 
         return true;
