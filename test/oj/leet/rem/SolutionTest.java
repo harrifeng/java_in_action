@@ -34,6 +34,7 @@ public class SolutionTest {
         org.junit.Assert.assertTrue(solution.isMatch("aaa", "a*a"));
         org.junit.Assert.assertTrue(solution.isMatch("ab", ".*"));
         org.junit.Assert.assertTrue(solution.isMatch("aab", "c*a*b"));
+        org.junit.Assert.assertTrue(solution.isMatch("a", "."));
 
     }
 }
