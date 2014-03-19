@@ -1,62 +1,45 @@
 package oj.leet.itr;
-
-import java.util.Arrays;
-
-/**
- * Created by hfeng on 14-1-16.
- */
 public class Solution {
-    //num is suppose to be 1 to 3999
-    private String romeN = "IVXLCDM";
+    private final String ROMA_NUM = "IVXLCDM";
 
     public String intToRoman(int num) {
-        StringBuffer sb = new StringBuffer("");
+        if (num < 0) {
+            return null;
+        }
+        StringBuffer sb = new StringBuffer();
         int size = 1000;
-        int[] digits = new int[4];
-        int i = 0;
-        while (num != 0) {
-            digits[i] = num / size;
-            num %= size;
+        for (int i = 6; i >= 0; i = i - 2) {
+            int dig = num / size;
+            sb.append(dToR(dig, i));
+            num = num % size;
             size /= 10;
-            i++;
         }
-
-        for (int j = 0; j < digits.length; j++) {
-            if (digits[j] > 0) {
-                sb.append(dToR(digits[j], 3-j));
-            }
-        }
-
         return sb.toString();
     }
+    private String dToR(int digit, int index) {
+        StringBuffer sbf = new StringBuffer();
 
-    private String dToR(int i, int lev) {
-        if (i > 9 || i < 1) {
-            return "";
-        }
-        StringBuffer sbuf = new StringBuffer("");
-        if (i < 4) {
-            while (i > 0) {
-                sbuf.append(romeN.charAt(lev * 2));
-                i--;
+        if (digit <= 3) {
+            for (int i = 0; i < digit; i++) {
+                sbf.append(ROMA_NUM.charAt(index));
             }
-            return sbuf.toString();
-        } else if (i == 4) {
-            sbuf.append(romeN.charAt(lev * 2));
-            sbuf.append(romeN.charAt(lev * 2 + 1));
-            return sbuf.toString();
-        } else if (i > 4 && i <= 8) {
-            sbuf.append(romeN.charAt(lev * 2 + 1));
-            while (i > 5) {
-                sbuf.append(romeN.charAt(lev * 2));
-                i--;
-            }
-            return sbuf.toString();
-        } else if (i == 9) {
-            sbuf.append(romeN.charAt(lev * 2 ));
-            sbuf.append(romeN.charAt(lev * 2 + 2));
-            return sbuf.toString();
         }
-        return sbuf.toString();
+        if (digit == 4) {
+            sbf.append(ROMA_NUM.charAt(index));
+            sbf.append(ROMA_NUM.charAt(index+1));
+        }
+        if (digit >=5 && digit <= 8 ) {
+            sbf.append(ROMA_NUM.charAt(index+1));
+            for (int i = 0; i < digit - 5; i++) {
+                sbf.append(ROMA_NUM.charAt(index));
+            }
+        }
+        if (digit == 9) {
+            sbf.append(ROMA_NUM.charAt(index));
+            sbf.append(ROMA_NUM.charAt(index+2));
+        }
+        return sbf.toString();
     }
 }
+
+// 1I 5V 10X 50L 100C 500D 1000M

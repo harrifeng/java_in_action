@@ -40,6 +40,7 @@ public class SolutionTest {
 
         assertEquals("MCMLXXX", solution.intToRoman(1980));
         assertEquals("IX", solution.intToRoman(9));
+        assertEquals("III", solution.intToRoman(3));
     }
 
 } 

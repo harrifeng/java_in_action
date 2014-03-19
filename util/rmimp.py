@@ -10,7 +10,7 @@ import re
 class SolutionFile(object):
     def __init__(self, pkg_name):
         root_fd = os.path.split(os.path.dirname(os.path.realpath(__file__)))[0]
-        spec_file = os.path.join(root_fd, ('src\\oj\\leet\\%s\\Solution.java') % pkg_name)
+        spec_file = os.path.join(root_fd, ('src/oj/leet/%s/Solution.java') % pkg_name)
         self.path = spec_file
     def rm_impl(self):
         for line in fileinput.input([self.path], inplace=True):

@@ -1,20 +1,18 @@
 package oj.leet.cwmw;
-
-/**
- * Created by hfeng on 1/12/14.
- */
 public class Solution {
     public int maxArea(int[] height) {
-        int start = 0;
+        if (height.length < 2) {
+            return 0;
+        }
+        int beg = 0;
         int end = height.length - 1;
-        int maxV = Integer.MIN_VALUE;
+        int maxV = 0;
 
-        while (start < end) {
-            int contains = Math.min(height[end], height[start]) * (end - start);
-            maxV = Math.max(maxV, contains);
-
-            if (height[start] < height[end]) {
-                start ++;
+        while (beg < end) {
+            int nowV = (end - beg) * Math.min(height[beg], height[end]);
+            maxV = Math.max(maxV, nowV);
+            if (height[beg] < height[end]) {
+                beg++;
             } else {
                 end--;
             }
