@@ -2,61 +2,61 @@ package lang.tij4.reusing;
 
 class Cleanser {
 
-    private String s = "Cleanser";
+  private String s = "Cleanser";
 
-    public void append(String a) {
-        s += a;
-    }
+  public static void main(String[] args) {
+    Cleanser x = new Cleanser();
+    x.dilute();
+    x.apply();
+    x.scrub();
+    System.out.println(x);
+  }
 
-    public void dilute() {
-        append(" dilute() ");
-    }
+  public void append(String a) {
+    s += a;
+  }
 
-    public void apply() {
-        append(" apply() ");
-    }
+  public void dilute() {
+    append(" dilute() ");
+  }
 
-    public void scrub() {
-        append(" scrub() ");
-    }
+  public void apply() {
+    append(" apply() ");
+  }
 
-    public String toString() {
-        return s;
-    }
+  public void scrub() {
+    append(" scrub() ");
+  }
 
-    public static void main(String[] args) {
-        Cleanser x = new Cleanser();
-        x.dilute();
-        x.apply();
-        x.scrub();
-        System.out.println(x);
-    }
+  public String toString() {
+    return s;
+  }
 }
 
 public class Detergent extends Cleanser {
 
-    // change a method:
-    public void scrub() {
-        append("Detergent.scrub() ");
-        super.scrub();
-    }
+  // Test the new class:
+  public static void main(String[] args) {
+    Detergent x = new Detergent();
+    x.dilute();
+    x.apply();
+    x.scrub();
+    x.foam();
+    System.out.println(x);
+    System.out.println("Testing base class:");
+    Cleanser.main(args);
+  }
 
-    // Add methods to the interface:
-    public void foam() {
-        append(" foam() ");
-    }
+  // change a method:
+  public void scrub() {
+    append("Detergent.scrub() ");
+    super.scrub();
+  }
 
-    // Test the new class:
-    public static void main(String[] args) {
-        Detergent x = new Detergent();
-        x.dilute();
-        x.apply();
-        x.scrub();
-        x.foam();
-        System.out.println(x);
-        System.out.println("Testing base class:");
-        Cleanser.main(args);
-    }
+  // Add methods to the interface:
+  public void foam() {
+    append(" foam() ");
+  }
 }
 ////////////////////////////////////////////////////////////////////
 // <===================OUTPUT===================>                 //

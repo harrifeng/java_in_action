@@ -5,20 +5,20 @@ package dp.headfirst.c01.p01;
  */
 public class Test {
 
-    public static void main(String[] args) {
-        MallardDuck md = new MallardDuck();
-        md.display();
-        Duck rd = new RedheadDuck();
-        rd.display();
+  public static void main(String[] args) {
+    MallardDuck md = new MallardDuck();
+    md.display();
+    Duck rd = new RedheadDuck();
+    rd.display();
 
-        rd.quack();
+    rd.quack();
 
-        Duck rub = new RubberDuck();
-        rub.quack();
+    Duck rub = new RubberDuck();
+    rub.quack();
 
-        Duck re = new DecoyDuck();
-        re.quack();
-        re.fly();
-    }
+    Duck re = new DecoyDuck();
+    re.quack();
+    re.fly();
+  }
 
 }

@@ -1,34 +1,40 @@
 package lang.tij4.reusing;
 
 class WaterSource {
-    private String s;
-    WaterSource() {
-        System.out.println("WaterSource()");
-        s = "Constructed";
-    }
-    public String toString() {
-        return s;
-    }
-}
-public class SprinklerSystem {
-    private String value1, value2, value3, value4;
-    private WaterSource source = new WaterSource();
-    private int i;
-    private float f;
-    public String toString() {
-        return
-                "value 1 = " + value1 + " " +
-                "value 2 = " + value2 + " " +
-                "value 3 = " + value3 + " " +
-                "value 4 = " + value4 + "\n" +
-                "i = " + i + " " + "f = " + f + " " +
-                "source = " + source;
-    }
 
-    public static void main(String[] args) {
-        SprinklerSystem sprinkler = new SprinklerSystem();
-        System.out.println(sprinkler);
-    }
+  private String s;
+
+  WaterSource() {
+    System.out.println("WaterSource()");
+    s = "Constructed";
+  }
+
+  public String toString() {
+    return s;
+  }
+}
+
+public class SprinklerSystem {
+
+  private String value1, value2, value3, value4;
+  private WaterSource source = new WaterSource();
+  private int i;
+  private float f;
+
+  public static void main(String[] args) {
+    SprinklerSystem sprinkler = new SprinklerSystem();
+    System.out.println(sprinkler);
+  }
+
+  public String toString() {
+    return
+        "value 1 = " + value1 + " " +
+        "value 2 = " + value2 + " " +
+        "value 3 = " + value3 + " " +
+        "value 4 = " + value4 + "\n" +
+        "i = " + i + " " + "f = " + f + " " +
+        "source = " + source;
+  }
 }
 /////////////////////////////////////////////////////////////////
 // <===================OUTPUT===================>              //

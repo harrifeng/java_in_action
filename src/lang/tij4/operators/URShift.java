@@ -1,37 +1,36 @@
 package lang.tij4.operators;
 
 public class URShift {
-    public static void main(String[] args) {
-        int i = -1;
-        System.out.println(Integer.toBinaryString(i));
 
-        i >>>= 10;
-        System.out.println(Integer.toBinaryString(i));
+  public static void main(String[] args) {
+    int i = -1;
+    System.out.println(Integer.toBinaryString(i));
 
+    i >>>= 10;
+    System.out.println(Integer.toBinaryString(i));
 
-        long l = -1;
-        System.out.println(Long.toBinaryString(l));
+    long l = -1;
+    System.out.println(Long.toBinaryString(l));
 
-        l >>>= 10;
-        System.out.println(Long.toBinaryString(l));
+    l >>>= 10;
+    System.out.println(Long.toBinaryString(l));
 
-        short s = -1;
-        System.out.println(Integer.toBinaryString(s));
+    short s = -1;
+    System.out.println(Integer.toBinaryString(s));
 
-        s >>>= 10;
-        System.out.println(Integer.toBinaryString(s));
+    s >>>= 10;
+    System.out.println(Integer.toBinaryString(s));
 
+    byte b = -1;
+    System.out.println(Integer.toBinaryString(b));
 
-        byte b = -1;
-        System.out.println(Integer.toBinaryString(b));
+    b >>>= 10;
+    System.out.println(Integer.toBinaryString(b));
 
-        b >>>= 10;
-        System.out.println(Integer.toBinaryString(b));
-
-        b = -1;
-        System.out.println(Integer.toBinaryString(b));
-        System.out.println(Integer.toBinaryString(b>>>10));
-    }
+    b = -1;
+    System.out.println(Integer.toBinaryString(b));
+    System.out.println(Integer.toBinaryString(b >>> 10));
+  }
 }
 //////////////////////////////////////////////////////////////////////
 // Output===>                                                       //
