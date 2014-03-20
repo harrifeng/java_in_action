@@ -1,17 +1,18 @@
 package dp.headfirst.c03.p01;
 
 public class Whip extends CondimentDecorator {
-    Beverage beverage;
 
-    public Whip(Beverage beverage) {
-        this.beverage = beverage;
-    }
+  Beverage beverage;
 
-    public String getDescription() {
-        return beverage.getDescription() + " , Whip";
-    }
+  public Whip(Beverage beverage) {
+    this.beverage = beverage;
+  }
 
-    public double cost() {
-        return .10 + beverage.cost();
-    }
+  public String getDescription() {
+    return beverage.getDescription() + " , Whip";
+  }
+
+  public double cost() {
+    return .10 + beverage.cost();
+  }
 }

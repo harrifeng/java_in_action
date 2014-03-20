@@ -4,12 +4,13 @@ package dp.headfirst.c01.p02;
  * Created by hfeng on 2/27/14.
  */
 public class ModelDuck extends Duck {
-    public ModelDuck() {
-        flyBehavior = new FlyNoWay();
-        quackBehavior = new Quack();
-    }
 
-    public void display() {
-        System.out.println("I'm a model duck");
-    }
+  public ModelDuck() {
+    flyBehavior = new FlyNoWay();
+    quackBehavior = new Quack();
+  }
+
+  public void display() {
+    System.out.println("I'm a model duck");
+  }
 }

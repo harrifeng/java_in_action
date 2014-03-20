@@ -1,36 +1,37 @@
 package lang.tij4.operators;
 
 public class Literals {
-    public static void main(String[] args) {
-        int i1 = 0x2f; // Hexadecimal (lowercase)
-        System.out.println("i1: " + Integer.toBinaryString(i1));
 
-        int i2 = 0x2F; // Hexadecimal (uppercase)
-        System.out.println("i2:" + Integer.toBinaryString(i2));
+  public static void main(String[] args) {
+    int i1 = 0x2f; // Hexadecimal (lowercase)
+    System.out.println("i1: " + Integer.toBinaryString(i1));
 
-        int i3 = 0177; // Octal (leading zero)
-        System.out.println("i3:" + Integer.toBinaryString(i3));
+    int i2 = 0x2F; // Hexadecimal (uppercase)
+    System.out.println("i2:" + Integer.toBinaryString(i2));
 
-        char c = 0xffff; // max char hex value
-        System.out.println("c:" + Integer.toBinaryString(c));
+    int i3 = 0177; // Octal (leading zero)
+    System.out.println("i3:" + Integer.toBinaryString(i3));
 
-        byte b = 0x7f; //max byte hex value
-        System.out.println("b:" + Integer.toBinaryString(b));
+    char c = 0xffff; // max char hex value
+    System.out.println("c:" + Integer.toBinaryString(c));
 
-        short s = 0x7fff; //max short hex value
-        System.out.println("s:" + Integer.toBinaryString(s));
+    byte b = 0x7f; //max byte hex value
+    System.out.println("b:" + Integer.toBinaryString(b));
 
-        long n1 = 200L; // long suffix
-        long n2 = 200l; // long suffix (but can be confusing)
-        long n3 = 200;
+    short s = 0x7fff; //max short hex value
+    System.out.println("s:" + Integer.toBinaryString(s));
 
-        float f1 = 1;
-        float f2 = 1F; // float suffix
-        float f3 = 1f; // float suffix
+    long n1 = 200L; // long suffix
+    long n2 = 200l; // long suffix (but can be confusing)
+    long n3 = 200;
 
-        double d1 = 1d; // doubld suffix
-        double d2 = 1D; // double suffix
-    }
+    float f1 = 1;
+    float f2 = 1F; // float suffix
+    float f3 = 1f; // float suffix
+
+    double d1 = 1d; // doubld suffix
+    double d2 = 1D; // double suffix
+  }
 }
 ////////////////////////
 // Output===>         //

@@ -1,17 +1,18 @@
 package dp.headfirst.c03.p01;
 
-public class Mocha extends CondimentDecorator{
-    Beverage beverage;
+public class Mocha extends CondimentDecorator {
 
-    public Mocha(Beverage beverage) {
-        this.beverage = beverage;
-    }
+  Beverage beverage;
 
-    public String getDescription() {
-        return beverage.getDescription() + ", Mocha";
-    }
+  public Mocha(Beverage beverage) {
+    this.beverage = beverage;
+  }
 
-    public double cost() {
-        return .20 + beverage.cost();
-    }
+  public String getDescription() {
+    return beverage.getDescription() + ", Mocha";
+  }
+
+  public double cost() {
+    return .20 + beverage.cost();
+  }
 }

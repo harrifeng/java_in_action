@@ -1,16 +1,19 @@
 package lang.tij4.initialization;
 
 class Rock {
-    Rock() { // ctor
-        System.out.printf("Rock ");
-    }
+
+  Rock() { // ctor
+    System.out.printf("Rock ");
+  }
 }
+
 public class SimpleConstructor {
-    public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            new Rock();
-        }
+
+  public static void main(String[] args) {
+    for (int i = 0; i < 10; i++) {
+      new Rock();
     }
+  }
 }
 ///////////////////////////////////////////////////////
 // <===================OUTPUT===================>    //

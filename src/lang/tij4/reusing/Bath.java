@@ -35,6 +35,11 @@ public class Bath {
     i = 47;
   }
 
+  public static void main(String[] args) {
+    Bath b = new Bath();
+    System.out.println(b);
+  }
+
   public String toString() {
     if (s4 == null) {
       // Delayed initialization:
@@ -48,11 +53,6 @@ public class Bath {
         "i = " + i + "\n" +
         "toy =" + toy + "\n" +
         "castille = " + castille;
-  }
-
-  public static void main(String[] args) {
-    Bath b = new Bath();
-    System.out.println(b);
   }
 }
 ////////////////////////////////////////////////////

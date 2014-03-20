@@ -1,11 +1,12 @@
 package dp.headfirst.c03.p01;
 
 public abstract class Beverage {
-    String description = "Unknown Beverage";
 
-    public String getDescription() {
-        return description;
-    }
+  String description = "Unknown Beverage";
 
-    public abstract  double cost();
+  public String getDescription() {
+    return description;
+  }
+
+  public abstract double cost();
 }

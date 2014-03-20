@@ -3,64 +3,65 @@ package lang.tij4.operators;
 import java.util.Random;
 
 public class MathOps {
-    public static void main(String[] args) {
-        //Create a seeded random number generator:
-        Random rand = new Random(47);
-        int i, j, k;
-        // Choose value from 1 to 100;
-        j = rand.nextInt(100) + 1;
-        System.out.println("j: " + j);
-        k = rand.nextInt(100) + 1;
-        System.out.println("k: " + k);
-        i = j + k;
-        System.out.println("j + k : " + i);
 
-        i = j - k;
-        System.out.println("j - k : " + i);
+  public static void main(String[] args) {
+    //Create a seeded random number generator:
+    Random rand = new Random(47);
+    int i, j, k;
+    // Choose value from 1 to 100;
+    j = rand.nextInt(100) + 1;
+    System.out.println("j: " + j);
+    k = rand.nextInt(100) + 1;
+    System.out.println("k: " + k);
+    i = j + k;
+    System.out.println("j + k : " + i);
 
-        i = j * k;
-        System.out.println("j * k : " + i);
+    i = j - k;
+    System.out.println("j - k : " + i);
 
-        i = j / k;
-        System.out.println("j / k : " + i);
+    i = j * k;
+    System.out.println("j * k : " + i);
 
-        i = j % k;
-        System.out.println("j % k : " + i);
+    i = j / k;
+    System.out.println("j / k : " + i);
 
-        // Floating-point number tests:
-        float u, v, w;
+    i = j % k;
+    System.out.println("j % k : " + i);
 
-        v = rand.nextFloat();
-        System.out.println("v: " + v);
+    // Floating-point number tests:
+    float u, v, w;
 
-        w = rand.nextFloat();
-        System.out.println("w: " + w);
+    v = rand.nextFloat();
+    System.out.println("v: " + v);
 
-        u = v + w;
-        System.out.println("v + w: " + u);
+    w = rand.nextFloat();
+    System.out.println("w: " + w);
 
-        u = v - w;
-        System.out.println("v - w: " + u);
+    u = v + w;
+    System.out.println("v + w: " + u);
 
-        u = v * w;
-        System.out.println("v * w: " + u);
+    u = v - w;
+    System.out.println("v - w: " + u);
 
-        u = v / w;
-        System.out.println("v / w: " + u);
+    u = v * w;
+    System.out.println("v * w: " + u);
 
-        // The folllowing also works for char, byte, short,int, long, and double
-        u += v;
-        System.out.println("u +=v: " + u);
+    u = v / w;
+    System.out.println("v / w: " + u);
 
-        u -= v;
-        System.out.println("u -=v: " + u);
+    // The folllowing also works for char, byte, short,int, long, and double
+    u += v;
+    System.out.println("u +=v: " + u);
 
-        u *= v;
-        System.out.println("u *=v: " + u);
+    u -= v;
+    System.out.println("u -=v: " + u);
 
-        u /= v;
-        System.out.println("u /=v: " + u);
-    }
+    u *= v;
+    System.out.println("u *=v: " + u);
+
+    u /= v;
+    System.out.println("u /=v: " + u);
+  }
 }
 ////////////////////////
 // Output===>         //
