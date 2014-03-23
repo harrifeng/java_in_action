@@ -10,13 +10,6 @@ import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Solution Tester.
- *
- * @author <Authors name>
- * @version 1.0
- * @since <pre>一月 23, 2014</pre>
- */
 public class SolutionTest {
 
     @Before
@@ -76,10 +69,6 @@ public class SolutionTest {
         soal.removeAll(alal);
         alal.removeAll(solution.threeSum(a2));
 
-        System.out.println("------------");
-        System.out.println("result is  :" + soal);
-        System.out.println("expected is:" + alal);
-
         org.junit.Assert.assertEquals(soal, alal);
 
         int[] a4 = {-2,0,0,2,2};
@@ -105,13 +94,6 @@ public class SolutionTest {
         soal.removeAll(alal);
         alal.removeAll(solution.threeSum(a4));
 
-        System.out.println("------------");
-        System.out.println("result is  :" + soal);
-        System.out.println("expected is:" + alal);
-
-
         assertEquals(soal, alal);
-
     }
-
 }

@@ -5,7 +5,6 @@ class Insect {
     protected int j;
     Insect() {
         System.out.println("i = " + i + ", j =" + j );
-        System.out.println(s);
         j = 39;
     }
     private static int x1 =
