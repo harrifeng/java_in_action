@@ -10,9 +10,9 @@ public class Solution {
 
         Arrays.sort(num);
         for (int i = 0; i < num.length; i++) {
-            // should be while until it is not equal
-            while (i > 0 && i < num.length && num[i] == num[i - 1]) {
-                i++;
+            // if and continue is better solution without judging the valid
+            if (i > 0 && num[i] == num[i - 1]) {
+                continue;
             }
 
             // No need to check whether i is equal(or bigger than) num.length - 2,
