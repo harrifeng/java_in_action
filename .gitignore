@@ -10,5 +10,7 @@ build/
 lib/junit-4.11.jar
 out
 *.dot
+.\#*
 
 java_in_action.iml
+

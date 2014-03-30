@@ -8,6 +8,7 @@ fi
 
 echo "--------Begin----------"
 echo
+echo "<===================OUTPUT===================>"
 java lang/tij4/$1
 echo
 echo "--------End------------"
