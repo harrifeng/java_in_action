@@ -1,29 +1,12 @@
 package oj.mycode.pq;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MySolution {
 
     public ArrayList<int[]> placeQueen(int num) {
         ArrayList<int[]> ret = new ArrayList<int[]>();
         place(num, 0, new int[num], ret);
-        // Following is printing the result, no import meanings.
-        for (int i = 0; i < ret.size(); i++) {
-            System.out.println(Arrays.toString(ret.get(i)));
-            for (int j = 0; j < num; j++) {
-                for (int k = 0; k < num; k++) {
-                    if (ret.get(i)[k] == j) {
-                        System.out.print("1 ");
-                    } else {
-                        System.out.print("0 ");
-                    }
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
-
         return ret;
     }
 
