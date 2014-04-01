@@ -1,9 +1,8 @@
-package oj.mycode.rbn;
+package oj.mycode.ra;
 
-import oj.leet.lswrc.Solution;
-import org.junit.Test;
-import org.junit.Before;
 import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * MySolution Tester.
@@ -33,7 +32,7 @@ public class MySolutionTest {
         org.junit.Assert.assertArrayEquals(r1, a1);
 
         int[][] a2 = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-        int[][] r2 = {{13, 9, 5, 1}, {14, 10, 6, 2}, {15, 11, 7, 3},{16, 12, 8, 4}};
+        int[][] r2 = {{13, 9, 5, 1}, {14, 10, 6, 2}, {15, 11, 7, 3}, {16, 12, 8, 4}};
         ms.rotateArray(a2);
         org.junit.Assert.assertArrayEquals(r2, a2);
     }

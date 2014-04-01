@@ -1,9 +1,7 @@
-package oj.mycode.vpn;
+package oj.mycode.ipn;
 
-/**
- * Created by hfeng on 1/6/14.
- */
 public class MySolution {
+
     public boolean isPrime(long num) {
         if (num < 2) {
             return false;
@@ -15,7 +13,7 @@ public class MySolution {
         // 3) Also, long numbers should append a L at end:         //
         //    Math.sqrt(169123456789L);                            //
         /////////////////////////////////////////////////////////////
-        for (long i = 2; i <= (long)Math.sqrt(num); i ++ ) {
+        for (long i = 2; i <= (long) Math.sqrt(num); i++) {
             if (num % i == 0) {
                 return false;
             }
