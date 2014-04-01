@@ -6,14 +6,9 @@ import org.junit.After;
 
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.collection.IsIterableContainingInAnyOrder.containsInAnyOrder;
 
-/**
- * Solution Tester.
- *
- * @author <Authors name>
- * @version 1.0
- */
 public class SolutionTest {
 
     @Before
@@ -31,21 +26,16 @@ public class SolutionTest {
     public void testGenerateParenthesis() throws Exception {
         Solution solution = new Solution();
         int n1 = 3;
-        ArrayList<String> a1 = new ArrayList<String>();
-        a1.add("((()))");
-        a1.add("(()())");
-        a1.add("(())()");
-        a1.add("()(())");
-        a1.add("()()()");
+        ArrayList<String> expected1 = new ArrayList<String>();
+        expected1.add("((()))");
+        expected1.add("(()())");
+        expected1.add("(())()");
+        expected1.add("()(())");
+        expected1.add("()()()");
+        System.out.println("expected: " + expected1);
+        System.out.println("actually: " + solution.generateParenthesis(n1));
 
-        ArrayList<String> solutionResult = new ArrayList<String>();
-        solutionResult = solution.generateParenthesis(n1);
-        System.out.println("------------");
-        System.out.println("Solution Result is: " + solutionResult);
-        System.out.println("Expected Result is: " + a1);
+        assertThat("", expected1, containsInAnyOrder(solution.generateParenthesis(n1).toArray()));
 
-        solutionResult.removeAll(a1);
-        a1.removeAll(solution.generateParenthesis(n1));
-        assertEquals(solutionResult, a1);
     }
-} 
+}

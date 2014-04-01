@@ -3,24 +3,28 @@ package oj.leet.gp;
 import java.util.ArrayList;
 
 public class Solution {
-    private void appendPart(int sLeft, int sRight, String tmp, ArrayList<String>result) {
-        if (sLeft == 0 && sRight == 0) {
-            result.add(tmp);
-        }
-        if (sLeft > 0){
-            appendPart(sLeft - 1, sRight, tmp + '(', result);
-        }
-        if (sRight > sLeft) {
-            appendPart(sLeft, sRight - 1, tmp + ')', result);
-        }
-    }
+
     public ArrayList<String> generateParenthesis(int n) {
         ArrayList<String> ret = new ArrayList<String>();
-        if (n == 0) {
-            return ret;
-        }
-        String tt = "";
-        appendPart(n, n, tt, ret);
+        genPar(new StringBuffer(), n, n, ret);
         return ret;
+    }
+
+    private void genPar(StringBuffer sbf, int left, int right, ArrayList<String> result) {
+        if (left == 0 && right == 0) {
+            result.add(sbf.toString());
+            return;
+        }
+
+        if (left > 0) {
+            sbf.append('(');
+            genPar(sbf, left - 1, right, result);
+            sbf.deleteCharAt(sbf.length()-1);
+        }
+        if (right > 0 && right > left) {
+            sbf.append(')');
+            genPar(sbf,left, right -1, result);
+            sbf.deleteCharAt(sbf.length()-1);
+        }
     }
 }
