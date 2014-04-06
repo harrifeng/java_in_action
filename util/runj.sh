@@ -13,3 +13,8 @@ java lang/tij4/$1
 echo
 echo "--------End------------"
 cd -
+
+#######################################
+# usage:                              #
+# util/runj.sh innerclasses/Callbacks #
+#######################################
