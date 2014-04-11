@@ -2,26 +2,30 @@ package oj.leet.lswrc;
 
 import java.util.Arrays;
 
-/**
- * Created by hfeng on 13-12-31.
- */
 public class Solution {
+
+    public static final int CHAR_SIZE = 256;
+
     public int lengthOfLongestSubstring(String s) {
-        int[] index = new int[256];
+
+        int[] index = new int[CHAR_SIZE];
         Arrays.fill(index, -1);
         int len = 0;
-        int max = 0;
+        int maxLen = 0;
+
         for (int i = 0; i < s.length(); i++) {
-            if (index[(int)s.charAt(i)] != -1) {
-                max = Math.max(max, len);
+            if (index[s.charAt(i)] >= 0) {
+                maxLen = Math.max(maxLen, len);
                 len = 0;
-                //be careful to change i first, then reinitialize the array
-                i = index[(int)s.charAt(i)] + 1;
+                i = index[s.charAt(i)] + 1;
+                // reinitialize the array after the i get the correct postion
                 Arrays.fill(index, -1);
             }
-            index[(int)s.charAt(i)] = i;
+            // Not `else` cases, if use else here, the len will be less than the
+            // actual value by 1.
+            index[s.charAt(i)] = i;
             len++;
         }
-        return Math.max(max, len);
+        return Math.max(maxLen, len);
     }
 }
