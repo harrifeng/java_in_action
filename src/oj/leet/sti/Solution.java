@@ -1,35 +1,38 @@
 package oj.leet.sti;
-
 public class Solution {
+
     public int atoi(String str) {
         if (str.length() == 0) {
             return 0;
         }
-        int start = 0;
-        boolean negVal = false;
-        int result = 0;
-        while(str.charAt(start) == ' ') {
-            start++;
+
+        int beg = 0;
+        while (str.charAt(beg) == ' ') {
+            beg++;
         }
-        if (str.charAt(start) == '-') {
-            negVal = true;
-            start++;
-        } else if (str.charAt(start) == '+') {
-            start++;
+
+        boolean neg = false;
+        if (str.charAt(beg) == '+') {
+            beg++;
+        } else if (str.charAt(beg) == '-') {
+            beg++;
+            neg = true;
         }
-        int len = str.length();
-        for(int i = start; i < len; i++) {
+
+        int ret = 0;
+        for (int i = beg; i < str.length(); i++) {
             if (Character.isDigit(str.charAt(i))) {
-                if (result > Integer.MAX_VALUE / 10
-                    || result == Integer.MAX_VALUE / 10
-                    && Character.getNumericValue(str.charAt(i)) > Integer.MAX_VALUE % 10) {
-                    return negVal ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+                if (ret > Integer.MAX_VALUE / 10
+                    || (ret == Integer.MAX_VALUE / 10
+                        && Character.getNumericValue(str.charAt(i))> Integer.MAX_VALUE % 10)) {
+                    return neg ? Integer.MIN_VALUE : Integer.MAX_VALUE;
                 }
-                result = result * 10 + Character.getNumericValue(str.charAt(i));
+
+                ret = ret * 10 + Character.getNumericValue(str.charAt(i));
             } else {
-                break;
+                return ret;
             }
         }
-        return negVal ? result * -1 : result;
+        return neg ? ret * (-1) : ret;
     }
 }
