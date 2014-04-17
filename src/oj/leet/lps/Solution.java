@@ -1,13 +1,12 @@
 package oj.leet.lps;
 
-import java.util.Arrays;
-
-/**
- * Created by hfeng on 1/4/14.   
- */
 public class Solution {
+
     public String longestPalindrome(String s) {
-        StringBuffer ns = new StringBuffer("^#");
+        if (s.length() <= 1) {
+            return s;
+        }
+        StringBuilder ns = new StringBuilder("^#");
         for (int i = 0; i < s.length(); i++) {
             ns.append(s.charAt(i));
             ns.append('#');
@@ -24,12 +23,16 @@ public class Solution {
                 currVal = Math.min(values[2 * centIndex - i], rightIndex - i);
             }
 
-            while(ns.charAt(i + currVal) == ns.charAt(i - currVal)) {
+            while (ns.charAt(i + currVal) == ns.charAt(i - currVal)) {
                 currVal++;
             }
             values[i] = currVal;
-        }
 
+            if (rightIndex < currVal + i) {
+                rightIndex = currVal + i;
+                centIndex = i;
+            }
+        }
 
         int maxI = 0;
         for (int i = 0; i < values.length; i++) {
@@ -38,7 +41,7 @@ public class Solution {
             }
         }
 
-        StringBuffer result = new StringBuffer("");
+        StringBuilder result = new StringBuilder("");
         for (int i = maxI - values[maxI] + 1; i <= maxI + values[maxI] - 1; i++) {
             if (ns.charAt(i) != '#' && ns.charAt(i) != '^' && ns.charAt(i) != '$') {
                 result.append(ns.charAt(i));

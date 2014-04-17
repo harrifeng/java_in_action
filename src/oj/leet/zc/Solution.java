@@ -1,31 +1,28 @@
 package oj.leet.zc;
-
-/**
- * Created by hfeng on 14-1-6.
- */
 public class Solution {
+
     public String convert(String s, int nRows) {
         if (nRows == 1) {
             return s;
         }
-        StringBuffer[] sbuf = new StringBuffer[nRows];
+        StringBuilder[] sb = new StringBuilder[nRows];
         for (int i = 0; i < nRows; i++) {
-            sbuf[i] = new StringBuffer();
+            sb[i] = new StringBuilder();
         }
-        int group = nRows * 2 - 2;
+        int group = 2 * nRows - 2;
         for (int i = 0; i < s.length(); i++) {
-            int newi = i % group;
-            if (newi < nRows) {
-                sbuf[newi].append(s.charAt(i));
+            int index = i % group;
+            if (index < nRows) {
+                sb[index].append(s.charAt(i));
             } else {
-                sbuf[group - newi].append(s.charAt(i));
+                sb[group - index].append(s.charAt(i));
             }
         }
 
-        StringBuffer result = new StringBuffer();
+        StringBuilder ret = new StringBuilder();
         for (int i = 0; i < nRows; i++) {
-            result.append(sbuf[i]);
+            ret.append(sb[i].toString());
         }
-        return result.toString();
+        return ret.toString();
     }
 }

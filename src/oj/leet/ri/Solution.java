@@ -1,53 +1,39 @@
 package oj.leet.ri;
-
 public class Solution {
+
     public int reverse(int x) {
-
-        boolean negNum = false;
+        boolean neg = false;
         if (x < 0) {
-            negNum = true;
+            neg = true;
         }
-
-        ///////////////////////////////////////////////////////////////////////////////
-        // Integer.MIN_VALUE is -2,147,483,648, and its abs should be                //
-        // +2,147,483,648, however, when using signed integers, the two's complement //
-        // binary of +2,147,483,648 and -2,147,483,648 are the same.                 //
-        // As +2,147,483,648 is out of range, the -2,147,483,648 is shown            //
-        ///////////////////////////////////////////////////////////////////////////////
+        //Integer.MIN_VALUE can not have corresponding abs value
         if (x == Integer.MIN_VALUE) {
-            return Integer.MIN_VALUE;
+            return x;
         }
         x = Math.abs(x);
-        
-        int result = 0;
-        while (x > 0) {
-            if (result > Integer.MAX_VALUE /10
-                || result == Integer.MAX_VALUE / 10
-                && x / 10 > Integer.MAX_VALUE % 10) {
-               if (negNum) {
-                   return Integer.MIN_VALUE;
-               } else {
-                   return Integer.MAX_VALUE;
-               }
-            }
-            result = result * 10 + x % 10;
-            x = x / 10;
-        }
-        if (negNum) {
-            return result * -1;
-        }
-        return result;
-    }
-
-
-    //Following version reverse can not handle overlap
-    public int reverseSimple(int x) {
-        int result = 0;
+        int ret = 0;
         while (x != 0) {
-            result = result * 10 + x % 10;
-            x = x / 10;
+            if (ret > Integer.MAX_VALUE / 10
+                || (ret == Integer.MAX_VALUE / 10
+                    && x % 10 > Integer.MAX_VALUE % 10)) {
+                return neg ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+            }
+            ret = ret * 10 + x % 10;
+            x /= 10;
         }
-        return result;
+        if (neg) {
+            return ret * (-1);
+        }
+        return ret;
     }
 
+    public int reverseSimple(int x) {
+        int ret = 0;
+        while (x != 0) {
+            ret = ret * 10 + x % 10;
+            x /= 10;
+        }
+        return ret;
+    }
 }
+
