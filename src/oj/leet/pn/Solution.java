@@ -16,9 +16,10 @@ public class Solution {
             tmp /= 10;
         }
 
-        // This condition is different with previous one
-        // not x >= 10, as numLen may go to zero.
-        while (numLen != 0) {
+        // We should not use x >= 10 as the condition
+        // Consider 100091, it will reach x = 9 and leave
+        // the loop without returning false.
+        while (x != 0) {
             int beg = x / numLen;
             int end = x % 10;
             if (beg != end) {
