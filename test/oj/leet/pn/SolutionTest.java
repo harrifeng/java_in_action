@@ -37,7 +37,6 @@ public class SolutionTest {
         assertFalse(solution.isPalindrome(-2147483648));
         assertFalse(solution.isPalindrome(10));
         assertFalse(solution.isPalindrome(122));
+        assertFalse(solution.isPalindrome(10000021));
     }
-
-
-} 
+}
