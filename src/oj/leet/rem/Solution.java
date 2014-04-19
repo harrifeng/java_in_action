@@ -1,35 +1,35 @@
 package oj.leet.rem;
+
 public class Solution {
     public boolean isMatch(String s, String p) {
         if (p.length() == 0) {
             return s.length() == 0;
         }
-
-        // length == 1 is the case that is easy to forget.
-        // as p is subtracted 2 each time, so if original
-        // p is odd, then finally it will face the length 1
+        // p == 1 is a special case
         if (p.length() == 1) {
             return (s.length() == 1)
-                    && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.');
+                    && (p.charAt(0) == '.' || s.charAt(0) == p.charAt(0));
         }
 
-        // next char is not '*': must match current character
+        // Next p is not *
         if (p.charAt(1) != '*') {
-            if (s.length() < 1) {
-                return false;
-            } else {
-                return (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.')
-                        && isMatch(s.substring(1), p.substring(1));
-            }
+            return (s.length() >= 1
+                    && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.'))
+                    && isMatch(s.substring(1), p.substring(1));
         }
-        // next char is *
-        while (s.length() > 0
-               && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.')) {
-            if (isMatch(s, p.substring(2))) {
-                return true;
-            }
-            s = s.substring(1);
+
+        // Next p does be *
+        if (isMatch(s, p.substring(2))) {
+            // To look forward first, whether they
+            // can match without the * match.
+            // for example initially, [aaab and a*b], when
+            // reaching the condition [b and a*b], the looking
+            // forward will save you.
+            return true;
+        } else {
+            return (s.length() >= 1
+                    && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.'))
+                    && isMatch(s.substring(1), p);
         }
-        return isMatch(s, p.substring(2));
     }
 }
