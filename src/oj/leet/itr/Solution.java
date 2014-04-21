@@ -1,45 +1,44 @@
 package oj.leet.itr;
-public class Solution {
-    private final String ROMA_NUM = "IVXLCDM";
 
-    public String intToRoman(int num) {
-        if (num < 0) {
-            return null;
-        }
-        StringBuffer sb = new StringBuffer();
-        int size = 1000;
-        for (int i = 6; i >= 0; i = i - 2) {
-            int dig = num / size;
-            sb.append(dToR(dig, i));
-            num = num % size;
-            size /= 10;
+public class Solution {
+
+    private static final String RomanStr = "IVXLCDME";
+
+    private String dToS(int digit, int level) {
+        StringBuilder sb = new StringBuilder();
+        if (digit > 0 && digit < 4) {
+            for (int i = 0; i < digit; i++) {
+                sb.append(RomanStr.charAt(level));
+            }
+        } else if (digit == 4) {
+            sb.append(RomanStr.charAt(level));
+            sb.append(RomanStr.charAt(level + 1));
+        } else if (digit > 4 && digit < 9) {
+            sb.append(RomanStr.charAt(level + 1));
+            for (int i = 5; i < digit; i++) {
+                sb.append(RomanStr.charAt(level));
+            }
+        } else if (digit == 9) {
+            sb.append(RomanStr.charAt(level));
+            sb.append(RomanStr.charAt(level + 2));
         }
         return sb.toString();
     }
-    private String dToR(int digit, int index) {
-        StringBuffer sbf = new StringBuffer();
 
-        if (digit <= 3) {
-            for (int i = 0; i < digit; i++) {
-                sbf.append(ROMA_NUM.charAt(index));
-            }
+    public String intToRoman(int num) {
+
+        if (num > 3999) {
+            return "";
         }
-        if (digit == 4) {
-            sbf.append(ROMA_NUM.charAt(index));
-            sbf.append(ROMA_NUM.charAt(index+1));
+        String ret = "";
+
+        int size = 1000;
+        for (int i = 6; i >= 0; i = i - 2) {
+            ret += dToS(num / size, i);
+            num %= size;
+            size /= 10;
         }
-        if (digit >=5 && digit <= 8 ) {
-            sbf.append(ROMA_NUM.charAt(index+1));
-            for (int i = 0; i < digit - 5; i++) {
-                sbf.append(ROMA_NUM.charAt(index));
-            }
-        }
-        if (digit == 9) {
-            sbf.append(ROMA_NUM.charAt(index));
-            sbf.append(ROMA_NUM.charAt(index+2));
-        }
-        return sbf.toString();
+
+        return ret;
     }
 }
-
-// 1I 5V 10X 50L 100C 500D 1000M
