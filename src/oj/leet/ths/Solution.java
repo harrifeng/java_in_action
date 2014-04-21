@@ -11,6 +11,8 @@ public class Solution {
         Arrays.sort(num);
         for (int i = 0; i < num.length; i++) {
             // if and continue is better solution without judging the valid
+            // but pls DO be clear that ONLY continue appears in the if case.
+            // extra i++ will lead incomplete results.
             if (i > 0 && num[i] == num[i - 1]) {
                 continue;
             }
