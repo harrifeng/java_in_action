@@ -1,14 +1,18 @@
 package tmp.util;
 
 
+import java.util.Collections;
 import java.util.Stack;
 
 public class TestCode {
-    private final static String[] test = {"abc", "def"};
+    public final String[] STR= {"hello", "world"};
+
     public static void main(String[] args) {
-        test[0] = "fhr";
-        System.out.println(test[0]);
-        System.out.println(System.getProperty("sun.arch.data.model"));
-        Stack<Integer> stack = new Stack();
+        TestCode tc = new TestCode();
+        System.out.println(tc.STR[0]);
+        tc.STR[0] = "www";
+        System.out.println(tc.STR[0]);
+
+
     }
 }
