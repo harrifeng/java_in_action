@@ -35,12 +35,4 @@ public class QuickSort {
             sort(array, mid + 1, end);
         }
     }
-
-    public static void main(String[] args) {
-        QuickSort qs = new QuickSort();
-        int[] arr = {1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
-        System.out.println(Arrays.toString(arr));
-        qs.quickSort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
 }
