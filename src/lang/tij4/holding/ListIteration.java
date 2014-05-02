@@ -1,6 +1,7 @@
 package lang.tij4.holding;
 
 import lang.tij4.typeinfo.pets.*;
+
 import java.util.*;
 
 public class ListIteration {
@@ -10,7 +11,7 @@ public class ListIteration {
 
         while (it.hasNext()) {
             System.out.print(it.next() + ", " + it.nextIndex() +
-                             ", " + it.previousIndex() + "; ");
+                    ", " + it.previousIndex() + "; ");
         }
         System.out.println();
         // Backwards:

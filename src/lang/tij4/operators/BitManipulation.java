@@ -20,14 +20,14 @@ public class BitManipulation {
         printBinaryInt("-i", -i);
         printBinaryInt("j", j);
 
-        printBinaryInt("(i&j)", (i&j));
-        printBinaryInt("(i|j)", (i|j));
-        printBinaryInt("(i^j)", (i^j));
+        printBinaryInt("(i&j)", (i & j));
+        printBinaryInt("(i|j)", (i | j));
+        printBinaryInt("(i^j)", (i ^ j));
         printBinaryInt("(i << 5)", (i << 5));
         printBinaryInt("(i >> 5)", (i >> 5));
-        printBinaryInt("((~i)>>5)", ((~i)>>5));
+        printBinaryInt("((~i)>>5)", ((~i) >> 5));
         printBinaryInt("(i >> 5)", (i >> 5));
-        printBinaryInt("((~i)>>5)", ((~i)>>5));
+        printBinaryInt("((~i)>>5)", ((~i) >> 5));
 
         long l = rand.nextLong();
         long m = rand.nextLong();
@@ -44,24 +44,24 @@ public class BitManipulation {
         printBinaryLong("-l", -l);
         printBinaryLong("m", m);
 
-        printBinaryLong("(l&m)", (l&m));
-        printBinaryLong("(l|m)", (l|m));
-        printBinaryLong("(l^m)", (l^m));
+        printBinaryLong("(l&m)", (l & m));
+        printBinaryLong("(l|m)", (l | m));
+        printBinaryLong("(l^m)", (l ^ m));
         printBinaryLong("(l << 5)", (l << 5));
         printBinaryLong("(l >> 5)", (l >> 5));
-        printBinaryLong("((~l)>>5)", ((~l)>>5));
+        printBinaryLong("((~l)>>5)", ((~l) >> 5));
         printBinaryLong("(l >> 5)", (l >> 5));
-        printBinaryLong("((~l)>>5)", ((~l)>>5));
+        printBinaryLong("((~l)>>5)", ((~l) >> 5));
     }
 
     private static void printBinaryInt(String s, int i) {
         System.out.println(s + ", int: " + i + ", binary: \n" +
-                           Integer.toBinaryString(i));
+                Integer.toBinaryString(i));
     }
 
     private static void printBinaryLong(String s, long i) {
         System.out.println(s + ", long: " + i + ", binary: \n" +
-                           Long.toBinaryString(i));
+                Long.toBinaryString(i));
     }
 }
 //////////////////////////////////////////////////////////////////////

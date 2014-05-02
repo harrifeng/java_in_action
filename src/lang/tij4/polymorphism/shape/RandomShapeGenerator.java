@@ -5,8 +5,9 @@ import java.util.Random;
 // A "factory" that randomly creates shapes
 public class RandomShapeGenerator {
     private Random rand = new Random(47);
+
     public Shape next() {
-        switch(rand.nextInt(3)) {
+        switch (rand.nextInt(3)) {
             default:
             case 0:
                 return new Circle();

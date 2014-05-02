@@ -12,7 +12,7 @@ public class ShortCircuit {
         System.out.println("result: " + (val < 2));
         return val < 2;
     }
-    
+
     static boolean test3(int val) {
         System.out.println("test3(" + val + ")");
         System.out.println("result: " + (val < 3));

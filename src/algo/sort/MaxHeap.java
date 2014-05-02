@@ -3,7 +3,7 @@ package algo.sort;
 /**
  * Created by hfeng on 14-1-6.
  */
-public class MaxHeap  extends Heap{
+public class MaxHeap extends Heap {
     public MaxHeap(int[] a) {
         super(a);
     }
@@ -35,7 +35,7 @@ public class MaxHeap  extends Heap{
 
     public void heapSort() {
         buildMaxHeap();
-        for(int i = getLen() - 1; i >= 1; i--) {
+        for (int i = getLen() - 1; i >= 1; i--) {
             swapPos(i, 0);
             maxHeap(0, i - 1);
         }

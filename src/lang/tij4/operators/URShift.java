@@ -30,7 +30,7 @@ public class URShift {
 
         b = -1;
         System.out.println(Integer.toBinaryString(b));
-        System.out.println(Integer.toBinaryString(b>>>10));
+        System.out.println(Integer.toBinaryString(b >>> 10));
     }
 }
 //////////////////////////////////////////////////////////////////////

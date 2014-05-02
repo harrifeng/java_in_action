@@ -3,6 +3,7 @@ package lang.tij4.operators;
 class Tank {
     int level;
 }
+
 public class Assignment {
     public static void main(String[] args) {
         Tank t1 = new Tank();

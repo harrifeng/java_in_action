@@ -3,7 +3,7 @@ package lang.tij4.reusing;
 public class SpaceShipDelegation {
     private String name;
     private SpaceShipControls controls =
-        new SpaceShipControls();
+            new SpaceShipControls();
 
     public SpaceShipDelegation(String name) {
         this.name = name;
@@ -30,13 +30,13 @@ public class SpaceShipDelegation {
         controls.right(velocity);
     }
 
-    public void turboBoost(){
+    public void turboBoost() {
         controls.turboBoost();
     }
 
     public static void main(String[] args) {
         SpaceShipDelegation protector =
-            new SpaceShipDelegation("NSEA Protector");
+                new SpaceShipDelegation("NSEA Protector");
         protector.forward(100);
     }
 }

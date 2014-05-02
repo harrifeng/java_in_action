@@ -27,8 +27,9 @@ public class MinHeap extends Heap {
             minHeap(min, end);
         }
     }
+
     public void buildMinHeap() {
-        for (int i = getLen() / 2  ; i >= 0; i--) {
+        for (int i = getLen() / 2; i >= 0; i--) {
             minHeap(i, getLen() - 1);
         }
     }

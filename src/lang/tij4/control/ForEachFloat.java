@@ -10,7 +10,7 @@ public class ForEachFloat {
             f[i] = rand.nextFloat();
         }
 
-        for(float x : f) {
+        for (float x : f) {
             System.out.println(x);
         }
     }

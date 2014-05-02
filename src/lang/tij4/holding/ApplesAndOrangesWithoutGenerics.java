@@ -5,16 +5,18 @@ import java.util.ArrayList;
 class Apple {
     private static long counter;
     private final long id = counter++;
+
     public long id() {
         return id;
     }
 }
 
-class Orange {}
+class Orange {
+}
 
 public class ApplesAndOrangesWithoutGenerics {
 
-   @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
         ArrayList apples = new ArrayList();
         for (int i = 0; i < 3; i++) {
@@ -23,7 +25,7 @@ public class ApplesAndOrangesWithoutGenerics {
         // Not prevented from adding an Orange to apples:
         apples.add(new Orange());
         for (int i = 0; i < apples.size(); i++) {
-            ((Apple)apples.get(i)).id();
+            ((Apple) apples.get(i)).id();
         }
     }
 }

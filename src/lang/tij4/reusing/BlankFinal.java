@@ -2,8 +2,12 @@ package lang.tij4.reusing;
 
 class Poppet {
     private int i;
-    Poppet(int ii) { i = ii;}
+
+    Poppet(int ii) {
+        i = ii;
+    }
 }
+
 public class BlankFinal {
     private final int i = 0; // Initialized final
     private final int j; // Blank final

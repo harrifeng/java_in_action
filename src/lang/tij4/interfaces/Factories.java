@@ -2,6 +2,7 @@ package lang.tij4.interfaces;
 
 interface Service {
     void method1();
+
     void method2();
 }
 
@@ -10,10 +11,13 @@ interface ServiceFactory {
 }
 
 class Implementation1 implements Service {
-    Implementation1() {} // Package access
+    Implementation1() {
+    } // Package access
+
     public void method1() {
         System.out.println("Implementation1 method1");
     }
+
     public void method2() {
         System.out.println("Implementation1 method2");
     }
@@ -26,10 +30,13 @@ class Implementation1Factory implements ServiceFactory {
 }
 
 class Implementation2 implements Service {
-    Implementation2() {} // Package access
+    Implementation2() {
+    } // Package access
+
     public void method1() {
         System.out.println("Implementation2 method1");
     }
+
     public void method2() {
         System.out.println("Implementation2 method2");
     }
@@ -48,6 +55,7 @@ public class Factories {
         s.method1();
         s.method2();
     }
+
     public static void main(String[] args) {
         serviceConsumer(new Implementation1Factory());
         // Implementations are completely interchangeable

@@ -18,9 +18,11 @@ public class Music2 {
     public static void tune(Wind i) {
         i.play(Note.MIDDLE_C);
     }
+
     public static void tune(Stringed i) {
         i.play(Note.MIDDLE_C);
     }
+
     public static void tune(Brass i) {
         i.play(Note.MIDDLE_C);
     }

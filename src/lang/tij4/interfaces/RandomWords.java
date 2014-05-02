@@ -8,11 +8,11 @@ public class RandomWords implements Readable {
 
     private static Random rand = new Random(47);
     private static final char[] capitals =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
     private static final char[] lowers =
-        "abcdefghijklmnopqrstuvwxyz".toCharArray();
+            "abcdefghijklmnopqrstuvwxyz".toCharArray();
     private static final char[] vowels =
-        "aeiou".toCharArray();
+            "aeiou".toCharArray();
     private int count;
 
     public RandomWords(int count) {

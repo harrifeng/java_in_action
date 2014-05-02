@@ -1,4 +1,5 @@
 package lang.tij4.holding;
+
 import java.util.*;
 
 public class ArrayIsNotIterable {
@@ -7,9 +8,10 @@ public class ArrayIsNotIterable {
             System.out.print(t + " ");
         }
     }
+
     public static void main(String[] args) {
         test(Arrays.asList(1, 2, 3));
-        String[] strings = { "A", "B", "C"};
+        String[] strings = {"A", "B", "C"};
         // An array works in foreach, but it's not Iterable:
         //! test(strings);
         // You must explicity convert it to an Iterable

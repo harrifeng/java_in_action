@@ -1,7 +1,9 @@
 package lang.tij4.reusing;
 
 class Instrument {
-    public void play() {}
+    public void play() {
+    }
+
     static void tune(Instrument i) {
         //...
         i.play();
@@ -10,7 +12,7 @@ class Instrument {
 
 // Wind objects are instruments
 // because they have the same interface
-public class Wind extends  Instrument{
+public class Wind extends Instrument {
 
     public static void main(String[] args) {
         Wind flute = new Wind();

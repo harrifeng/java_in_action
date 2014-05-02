@@ -4,16 +4,20 @@ import java.util.Random;
 
 class Value {
     int i; //package access
+
     public Value(int i) {
         this.i = i;
     }
 }
+
 public class FinalData {
     private static Random rand = new Random(47);
     private String id;
+
     public FinalData(String id) {
-       this.id = id;
+        this.id = id;
     }
+
     // Can be compile-time constant:
     private final int valueOne = 9;
     private static final int VALUE_TWO = 99;
@@ -29,7 +33,8 @@ public class FinalData {
     private static final Value VAL_3 = new Value(33);
 
     // Arrays:
-    private final int[] a =  {1, 2, 3, 4, 5, 6};
+    private final int[] a = {1, 2, 3, 4, 5, 6};
+
     public String toString() {
         return id + ": " + "i4= " + i4 + ", INT_5 =" + INT_5;
     }
@@ -45,7 +50,7 @@ public class FinalData {
         //! fd1.v2 = new Value(0); // Error: Can't
         //! fd1.VAL_3 = new Value(1); // change reference
         //! fd1.a = new int[3];
-        
+
         System.out.println(fd1);
         System.out.println("Creating new FinalData");
         FinalData fd2 = new FinalData("fd2");

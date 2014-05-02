@@ -3,9 +3,10 @@ package oj.leet.rnfel;
 /**
  * Created by hfeng on 14-2-10.
  */
-public class ListNode implements Cloneable{
+public class ListNode implements Cloneable {
     int val;
     ListNode next;
+
     ListNode(int x) {
         val = x;
         next = null;
@@ -30,7 +31,7 @@ public class ListNode implements Cloneable{
         ListNode self = this;
         while (self != null) {
             sb.append(" " + self.val);
-            self  = self.next;
+            self = self.next;
         }
         sb.append(" }");
         return sb.toString();
@@ -40,8 +41,8 @@ public class ListNode implements Cloneable{
         int result = 37;
         ListNode self = this;
         while (self != null) {
-            result = 37 * result + (int)self.val;
-            self  = self.next;
+            result = 37 * result + (int) self.val;
+            self = self.next;
         }
         return result;
     }

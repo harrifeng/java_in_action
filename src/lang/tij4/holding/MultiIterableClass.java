@@ -8,12 +8,15 @@ public class MultiIterableClass extends IterableClass {
             public Iterator<String> iterator() {
                 return new Iterator<String>() {
                     int current = words.length - 1;
+
                     public boolean hasNext() {
                         return current > -1;
                     }
+
                     public String next() {
                         return words[current--];
                     }
+
                     public void remove() {
                         // Not implemented
                         throw new UnsupportedOperationException();
@@ -27,12 +30,13 @@ public class MultiIterableClass extends IterableClass {
         return new Iterable<String>() {
             public Iterator<String> iterator() {
                 List<String> shuffled =
-                    new ArrayList<String>(Arrays.asList(words));
+                        new ArrayList<String>(Arrays.asList(words));
                 Collections.shuffle(shuffled, new Random(47));
                 return shuffled.iterator();
             }
         };
     }
+
     public static void main(String[] args) {
         MultiIterableClass mic = new MultiIterableClass();
         for (String s : mic.reversed()) {

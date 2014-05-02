@@ -1,6 +1,7 @@
 package lang.tij4.holding;
 
 import lang.tij4.typeinfo.pets.*;
+
 import java.util.*;
 
 public class InterfaceVsIterator {
@@ -23,9 +24,9 @@ public class InterfaceVsIterator {
         List<Pet> petList = Pets.arrayList(8);
         Set<Pet> petSet = new HashSet<Pet>(petList);
         Map<String, Pet> petMap =
-            new LinkedHashMap<String, Pet>();
+                new LinkedHashMap<String, Pet>();
         String[] names = ("Ralph, Eric, Robin, Lacey, " +
-                          "Brithney, Sam, Spot, Fluffy").split(", ");
+                "Brithney, Sam, Spot, Fluffy").split(", ");
         for (int i = 0; i < names.length; i++) {
             petMap.put(names[i], petList.get(i));
         }

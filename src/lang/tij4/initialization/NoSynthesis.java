@@ -1,9 +1,13 @@
 package lang.tij4.initialization;
 
 class Bird2 {
-    Bird2(int i) {}
-    Bird2(double d) {}
+    Bird2(int i) {
+    }
+
+    Bird2(double d) {
+    }
 }
+
 public class NoSynthesis {
     public static void main(String[] args) {
         //! Bird2 b = new Bird2(); // no deafult

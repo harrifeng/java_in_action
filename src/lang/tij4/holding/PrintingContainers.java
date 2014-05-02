@@ -19,6 +19,7 @@ public class PrintingContainers {
         collection.add("dog");
         return collection;
     }
+
     static Map fill(Map<String, String> map) {
         map.put("rat", "Fuzzy");
         map.put("cat", "Rags");

@@ -2,7 +2,7 @@ package lang.tij4.polymorphism.shape;
 
 public class Shapes {
     private static RandomShapeGenerator gen =
-        new RandomShapeGenerator();
+            new RandomShapeGenerator();
 
     public static void main(String[] args) {
         Shape[] s = new Shape[9];

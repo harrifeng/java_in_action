@@ -1,7 +1,8 @@
 package lang.tij4.innerclasses;
 
 public class DotNew {
-    public class Inner{}
+    public class Inner {
+    }
 
     public static void main(String[] args) {
         DotNew dn = new DotNew();

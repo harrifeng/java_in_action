@@ -6,7 +6,7 @@ public class LabeledWhile {
         outer:
         while (true) {
             System.out.println("Outer while loop");
-            while(true) {
+            while (true) {
                 i++;
                 System.out.println("i = " + i);
                 if (i == 1) {

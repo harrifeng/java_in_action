@@ -50,7 +50,8 @@ class Custom {
         System.out.println("Custom ctor");
     }
 }
-public class PlaceSetting extends Custom{
+
+public class PlaceSetting extends Custom {
     private Spoon sp;
     private Fork frk;
     private Knife kn;

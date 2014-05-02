@@ -1,4 +1,5 @@
 package oj.leet.ri;
+
 public class Solution {
 
     public int reverse(int x) {
@@ -14,7 +15,7 @@ public class Solution {
         int ret = 0;
         while (x != 0) {
             if (ret > Integer.MAX_VALUE / 10
-                || (ret == Integer.MAX_VALUE / 10
+                    || (ret == Integer.MAX_VALUE / 10
                     && x % 10 > Integer.MAX_VALUE % 10)) {
                 return neg ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             }

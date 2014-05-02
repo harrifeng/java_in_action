@@ -3,6 +3,7 @@ package lang.tij4.operators;
 class Value {
     int i;
 }
+
 public class EqualsMethod2 {
     public static void main(String[] args) {
         Value v1 = new Value();

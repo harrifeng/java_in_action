@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 class LoggingException extends Exception {
     private static Logger logger =
             Logger.getLogger("LoggingException");
+
     public LoggingException() {
         StringWriter trace = new StringWriter();
         printStackTrace(new PrintWriter(trace));
@@ -18,7 +19,7 @@ public class LoggingExceptions {
     public static void main(String[] args) {
         try {
             throw new LoggingException();
-        } catch(LoggingException e) {
+        } catch (LoggingException e) {
             System.err.println("Caught " + e);
         }
         try {

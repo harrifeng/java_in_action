@@ -2,12 +2,14 @@ package lang.tij4.initialization;
 
 public class Burrito {
     Spiciness degree;
+
     public Burrito(Spiciness degree) {
         this.degree = degree;
     }
+
     public void describe() {
         System.out.print("This burrito is");
-        switch(degree) {
+        switch (degree) {
             case NOT:
                 System.out.println("not spicy at all");
                 break;

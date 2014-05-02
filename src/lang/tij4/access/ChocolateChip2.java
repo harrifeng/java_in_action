@@ -6,6 +6,7 @@ public class ChocolateChip2 extends Cookie {
     public ChocolateChip2() {
         System.out.println("ChocolateChip2 ctor");
     }
+
     public void chomp() {
         bite();
     }

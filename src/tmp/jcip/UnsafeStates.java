@@ -8,7 +8,7 @@ public class UnsafeStates {
         return states;
     }
 
-    private String[] states = new String[] { "AA", "BB"};
+    private String[] states = new String[]{"AA", "BB"};
 
     public static void main(String[] args) {
         UnsafeStates us = new UnsafeStates();

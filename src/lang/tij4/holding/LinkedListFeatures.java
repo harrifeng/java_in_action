@@ -1,12 +1,13 @@
 package lang.tij4.holding;
 
 import lang.tij4.typeinfo.pets.*;
+
 import java.util.*;
 
 public class LinkedListFeatures {
     public static void main(String[] args) {
         LinkedList<Pet> pets =
-            new LinkedList<Pet>(Pets.arrayList(5));
+                new LinkedList<Pet>(Pets.arrayList(5));
 
         System.out.println(pets);
         // Identical:
@@ -37,7 +38,7 @@ public class LinkedListFeatures {
         System.out.println("After addLast(): " + pets);
 
         System.out.println("pets.removeLast(): " + pets.removeLast());
-        
+
     }
 }
 /////////////////////////////////////////////////////////////

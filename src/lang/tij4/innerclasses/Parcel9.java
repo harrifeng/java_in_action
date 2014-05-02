@@ -5,10 +5,11 @@ public class Parcel9 {
     // anonymous inner class:
     public Destination destination(final String dest) {
         return new Destination() {
-           private String label = dest;
-           public String readLabel() {
-               return label;
-           }
+            private String label = dest;
+
+            public String readLabel() {
+                return label;
+            }
         };
     }
 

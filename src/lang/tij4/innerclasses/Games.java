@@ -9,13 +9,17 @@ interface GameFactory {
 }
 
 class Checkers implements Game {
-    private Checkers() {}
+    private Checkers() {
+    }
+
     private int moves = 0;
     private static final int MOVES = 3;
+
     public boolean move() {
         System.out.println("Checkers move " + moves);
         return ++moves != MOVES;
     }
+
     public static GameFactory factory = new GameFactory() {
         @Override
         public Game getGame() {
@@ -25,13 +29,17 @@ class Checkers implements Game {
 }
 
 class Chess implements Game {
-    private Chess() {}
+    private Chess() {
+    }
+
     private int moves = 0;
     private static final int MOVES = 4;
+
     public boolean move() {
         System.out.println("Chess move " + moves);
         return ++moves != MOVES;
     }
+
     public static GameFactory factory = new GameFactory() {
         @Override
         public Game getGame() {
@@ -39,6 +47,7 @@ class Chess implements Game {
         }
     };
 }
+
 public class Games {
     public static void playGame(GameFactory factory) {
         Game s = factory.getGame();

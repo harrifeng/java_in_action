@@ -5,6 +5,7 @@ class Rock {
         System.out.printf("Rock ");
     }
 }
+
 public class SimpleConstructor {
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {

@@ -15,7 +15,7 @@ public class ApplesAndOrangesWithGenerics {
             System.out.println(apples.get(i).id());
         }
         // Using foreach:
-        for(Apple c : apples) {
+        for (Apple c : apples) {
             System.out.println(c.id());
         }
     }

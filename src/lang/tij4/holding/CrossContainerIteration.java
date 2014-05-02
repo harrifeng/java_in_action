@@ -10,7 +10,8 @@ public class CrossContainerIteration {
             Pet p = it.next();
             System.out.print(p.id() + ":" + p + " ");
         }
-        System.out.println();;
+        System.out.println();
+        ;
     }
 
     public static void main(String[] args) {

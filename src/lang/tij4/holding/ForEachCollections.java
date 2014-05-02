@@ -1,4 +1,5 @@
 package lang.tij4.holding;
+
 import java.util.*;
 
 public class ForEachCollections {

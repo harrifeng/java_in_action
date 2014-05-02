@@ -6,6 +6,7 @@ class Person {
         System.out.println("Yummy");
     }
 }
+
 class Peeler {
     static Apple peel(Apple apple) {
         // .. remove peel
@@ -18,6 +19,7 @@ class Apple {
         return Peeler.peel(this);
     }
 }
+
 public class PassingThis {
     public static void main(String[] args) {
         new Person().eat(new Apple());

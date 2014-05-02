@@ -4,27 +4,30 @@ class Shape {
     Shape(int i) {
         System.out.println("Shape ctor");
     }
+
     void dispose() {
         System.out.println("Shape dispose");
     }
 }
 
-class Circle extends  Shape {
+class Circle extends Shape {
     Circle(int i) {
         super(i);
         System.out.println("Drawing Circle");
     }
+
     void dispose() {
         System.out.println("Erasing Circle");
         super.dispose();
     }
 }
 
-class Triangle extends  Shape {
+class Triangle extends Shape {
     Triangle(int i) {
         super(i);
         System.out.println("Drawing Triangle");
     }
+
     void dispose() {
         System.out.println("Erasing Triangle");
         super.dispose();
@@ -33,25 +36,29 @@ class Triangle extends  Shape {
 
 class Line extends Shape {
     private int start, end;
+
     Line(int start, int end) {
         super(start);
         this.start = start;
         this.end = end;
         System.out.println("Drawing line: " + start + ", " + end);
     }
+
     void dispose() {
         System.out.println("Erasing Line: " + start + ", " + end);
         super.dispose();
     }
 }
-public class CADSystem extends Shape{
+
+public class CADSystem extends Shape {
     private Circle c;
     private Triangle t;
     private Line[] lines = new Line[3];
+
     public CADSystem(int i) {
         super(i + 1);
-        for(int j = 0; j < lines.length; j++) {
-            lines[j] = new Line(j, j*j);
+        for (int j = 0; j < lines.length; j++) {
+            lines[j] = new Line(j, j * j);
         }
         c = new Circle(1);
         t = new Triangle(1);

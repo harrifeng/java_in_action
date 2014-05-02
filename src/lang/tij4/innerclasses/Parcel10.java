@@ -4,6 +4,7 @@ public class Parcel10 {
     public Destination destination(final String dest, final float price) {
         return new Destination() {
             private int cost;
+
             // Instance initialization for each object
             {
                 cost = Math.round(price);
@@ -11,6 +12,7 @@ public class Parcel10 {
                     System.out.println("Over budget!");
                 }
             }
+
             private String label = dest;
 
             @Override

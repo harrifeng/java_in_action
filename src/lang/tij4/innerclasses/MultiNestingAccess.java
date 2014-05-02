@@ -1,9 +1,13 @@
 package lang.tij4.innerclasses;
 
 class MNA {
-    private void f() {}
+    private void f() {
+    }
+
     class A {
-        private void g() {}
+        private void g() {
+        }
+
         public class B {
             void h() {
                 g();

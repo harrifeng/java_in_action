@@ -1,4 +1,5 @@
 package oj.leet.sti;
+
 public class Solution {
 
     public int atoi(String str) {
@@ -23,8 +24,8 @@ public class Solution {
         for (int i = beg; i < str.length(); i++) {
             if (Character.isDigit(str.charAt(i))) {
                 if (ret > Integer.MAX_VALUE / 10
-                    || (ret == Integer.MAX_VALUE / 10
-                        && Character.getNumericValue(str.charAt(i))> Integer.MAX_VALUE % 10)) {
+                        || (ret == Integer.MAX_VALUE / 10
+                        && Character.getNumericValue(str.charAt(i)) > Integer.MAX_VALUE % 10)) {
                     return neg ? Integer.MIN_VALUE : Integer.MAX_VALUE;
                 }
 

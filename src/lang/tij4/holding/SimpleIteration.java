@@ -10,7 +10,7 @@ public class SimpleIteration {
         List<Pet> pets = Pets.arrayList(12);
         Iterator<Pet> it = pets.iterator();
 
-        while(it.hasNext()) {
+        while (it.hasNext()) {
             Pet p = it.next();
             System.out.print(p.id() + ":" + p + " ");
         }

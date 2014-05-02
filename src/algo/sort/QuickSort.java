@@ -22,20 +22,20 @@ public class QuickSort {
         int i = beg - 1;
         int j = beg;
         int pivot = arr[end];
-        for(; j < end; j++) {
+        for (; j < end; j++) {
             if (arr[j] < pivot) {
-                int tmp = arr[i+1];
-                arr[i+1] = arr[j];
+                int tmp = arr[i + 1];
+                arr[i + 1] = arr[j];
                 arr[j] = tmp;
                 i++;
             }
         }
 
         int tmp = arr[end];
-        arr[end] = arr[i+1];
-        arr[i+1] = tmp;
+        arr[end] = arr[i + 1];
+        arr[i + 1] = tmp;
 
-        return i+1;
+        return i + 1;
     }
 
     private void qsort(int[] arr, int beg, int end) {
@@ -49,6 +49,7 @@ public class QuickSort {
     public void sort() {
         qsort(this.array, 0, this.array.length - 1);
     }
+
     public static void main(String[] args) {
         int[] aa = {0, 3, 5, 4, 1, 2};
         QuickSort qs = new QuickSort(aa);

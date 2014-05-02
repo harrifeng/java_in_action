@@ -12,7 +12,7 @@ public class Solution {
         char[] chArr = str.toCharArray();
 
         for (int i = 0; i < chArr.length; i++) {
-            if (chArr[i] != ' ' || (i > 0 && chArr[i-1] != ' ')) {
+            if (chArr[i] != ' ' || (i > 0 && chArr[i - 1] != ' ')) {
                 chArr[prev] = chArr[i];
                 prev++;
             }

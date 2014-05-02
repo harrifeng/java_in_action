@@ -2,6 +2,7 @@ package lang.tij4.control;
 
 public class IfElse {
     static int result = 0;
+
     static void test(int testval, int target) {
         if (testval > target) {
             result = +1;

@@ -1,8 +1,16 @@
 package lang.tij4.interfaces;
 
-interface I1 {void f();}
-interface I2 {int f(int i);}
-interface I3 {int f();}
+interface I1 {
+    void f();
+}
+
+interface I2 {
+    int f(int i);
+}
+
+interface I3 {
+    int f();
+}
 
 class C {
     public int f() {
@@ -11,13 +19,15 @@ class C {
 }
 
 class C2 implements I1, I2 {
-    public void f() {}
-    public int f(int i){ // overloaded
+    public void f() {
+    }
+
+    public int f(int i) { // overloaded
         return 1;
     }
 }
 
-class C3 extends  C implements I2 {
+class C3 extends C implements I2 {
     public int f(int i) { // overloaded
         return 1;
     }

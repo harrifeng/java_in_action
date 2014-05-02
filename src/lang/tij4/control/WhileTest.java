@@ -9,7 +9,7 @@ public class WhileTest {
     }
 
     public static void main(String[] args) {
-        while(condition()) {
+        while (condition()) {
             System.out.println("Inside 'while'");
         }
         System.out.println("Exited 'while'");

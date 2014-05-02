@@ -4,6 +4,7 @@ class StaticSuper {
     public static String staticGet() {
         return "Base staticGet()";
     }
+
     public String dynamicGet() {
         return "base dynamicGet()";
     }
@@ -13,6 +14,7 @@ class StaticSub extends StaticSuper {
     public static String staticGet() {
         return "Derived staticGet()";
     }
+
     public String dynamicGet() {
         return "Derived dynamicGet()";
     }

@@ -11,7 +11,8 @@ class Drawing extends Art {
         System.out.println("Drawing ctor");
     }
 }
-public class Cartoon extends Drawing{
+
+public class Cartoon extends Drawing {
     public Cartoon() {
         System.out.println("Cartoon ctor");
     }

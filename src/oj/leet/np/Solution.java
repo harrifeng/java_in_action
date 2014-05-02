@@ -10,7 +10,7 @@ public class Solution {
         }
 
         for (int i = num.length - 2; i >= 0; i--) {
-            if (num[i] < num[i+1]) {
+            if (num[i] < num[i + 1]) {
                 int j;
                 for (j = num.length - 1; j >= i; j--) {
                     if (num[i] < num[j]) {
@@ -23,7 +23,7 @@ public class Solution {
                 num[j] = temp;
 
                 // sort the rest of arrays after the swap point
-                Arrays.sort(num, i+1, num.length);
+                Arrays.sort(num, i + 1, num.length);
                 return;
             }
         }

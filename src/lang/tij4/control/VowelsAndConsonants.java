@@ -8,7 +8,7 @@ public class VowelsAndConsonants {
 
         for (int i = 0; i < 100; i++) {
             int c = rand.nextInt(26) + 'a';
-            System.out.println((char)c + ", " + c + ":");
+            System.out.println((char) c + ", " + c + ":");
             switch (c) {
                 case 'a':
                 case 'e':

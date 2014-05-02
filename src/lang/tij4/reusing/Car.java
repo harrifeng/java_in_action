@@ -1,25 +1,39 @@
 package lang.tij4.reusing;
 
 class Engine {
-    public void start() {}
-    public void rev() {}
-    public void stop() {}
+    public void start() {
+    }
+
+    public void rev() {
+    }
+
+    public void stop() {
+    }
 }
 
 class Wheel {
-    public void inflate(int psi) {}
+    public void inflate(int psi) {
+    }
 }
 
 class Window {
-    public void rollup() {}
-    public void rolldown() {}
+    public void rollup() {
+    }
+
+    public void rolldown() {
+    }
 }
 
 class Door {
     public Window window = new Window();
-    public void open() {}
-    public void close() {}
+
+    public void open() {
+    }
+
+    public void close() {
+    }
 }
+
 public class Car {
     public Engine engine = new Engine();
     public Wheel[] wheel = new Wheel[4];

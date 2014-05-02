@@ -10,10 +10,11 @@ public class InitialValues {
     float f;
     double d;
     InitialValues reference;
+
     void printInitialValues() {
         System.out.println("Data type       Initial Value");
         System.out.println("boolean         " + t);
-        System.out.println("char            [" + c + "]" );
+        System.out.println("char            [" + c + "]");
         System.out.println("byte            " + b);
         System.out.println("short           " + s);
         System.out.println("int             " + i);

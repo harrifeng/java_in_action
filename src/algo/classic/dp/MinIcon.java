@@ -12,8 +12,8 @@ public class MinIcon {
         int[] val = {1, 2, 5};
         for (int i = 0; i <= S; i++) {
             for (int j = 0; j < val.length; j++) {
-                if (val[j] <= i && min[i-val[j]] + 1 < min[i]) {
-                    min[i] = min[i-val[j]] + 1;
+                if (val[j] <= i && min[i - val[j]] + 1 < min[i]) {
+                    min[i] = min[i - val[j]] + 1;
                 }
             }
         }

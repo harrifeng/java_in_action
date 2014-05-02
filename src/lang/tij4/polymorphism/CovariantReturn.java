@@ -23,6 +23,7 @@ class WheatMill extends Mill {
         return new Wheat();
     }
 }
+
 public class CovariantReturn {
 
     public static void main(String[] args) {

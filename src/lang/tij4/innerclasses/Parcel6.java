@@ -5,9 +5,11 @@ public class Parcel6 {
         if (b) {
             class TrackingSlip {
                 private String id;
+
                 TrackingSlip(String s) {
                     id = s;
                 }
+
                 String getSlip() {
                     return id;
                 }
@@ -18,6 +20,7 @@ public class Parcel6 {
         // Can't use here! Out of scope:
         //! TrackingSlip ts = new TrackingSlip("x");
     }
+
     public void track() {
         internalTracking(true);
     }

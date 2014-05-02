@@ -13,8 +13,11 @@ interface Lethal {
 }
 
 class DragonZilla implements DangerousMonster {
-    public void menace() {}
-    public void destroy() {}
+    public void menace() {
+    }
+
+    public void destroy() {
+    }
 }
 
 interface Vampire extends DangerousMonster, Lethal {
@@ -22,19 +25,29 @@ interface Vampire extends DangerousMonster, Lethal {
 }
 
 class VeryBadVampire implements Vampire {
-    public void menace() {}
-    public void destroy() {}
-    public void kill() {}
-    public void drinkBlood() {}
+    public void menace() {
+    }
+
+    public void destroy() {
+    }
+
+    public void kill() {
+    }
+
+    public void drinkBlood() {
+    }
 }
+
 public class HorrorShow {
     static void u(Monster b) {
         b.menace();
     }
+
     static void v(DangerousMonster d) {
         d.menace();
         d.destroy();
     }
+
     static void w(Lethal l) {
         l.kill();
     }

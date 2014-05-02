@@ -1,7 +1,9 @@
 package lang.tij4.access;
 
 class Sundae {
-    private Sundae() {}
+    private Sundae() {
+    }
+
     static Sundae makeASundae() {
         return new Sundae();
     }

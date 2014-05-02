@@ -10,8 +10,9 @@ public class Demotion {
     void testDouble() {
         double x = 0;
         System.out.println("double argument");
-        f7((char)x);
+        f7((char) x);
     }
+
     public static void main(String[] args) {
         Demotion p = new Demotion();
         p.testDouble();

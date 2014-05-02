@@ -15,7 +15,7 @@ public class BreakAndContinue {
         }
         System.out.println();
         // Using foreach:
-        for(int i : Range.range(100)) {
+        for (int i : Range.range(100)) {
             if (i == 74) {
                 break; // Out ot for loop
             }

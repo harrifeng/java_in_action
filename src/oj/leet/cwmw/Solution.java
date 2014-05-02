@@ -11,7 +11,7 @@ public class Solution {
         int maxV = Integer.MIN_VALUE;
         while (beg < end) {
             maxV = Math.max(maxV, (end - beg) *
-                                  Math.min(height[end], height[beg]));
+                    Math.min(height[end], height[beg]));
             if (height[beg] < height[end]) {
                 beg++;
             } else {

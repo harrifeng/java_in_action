@@ -31,6 +31,7 @@ public class Animals {
         }
         return numPairs;
     }
+
     class Animal {
         Species species;
         Gender gender;

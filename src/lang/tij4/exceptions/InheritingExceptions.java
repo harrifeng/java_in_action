@@ -1,6 +1,7 @@
 package lang.tij4.exceptions;
 
-class SimpleException extends Exception {}
+class SimpleException extends Exception {
+}
 
 public class InheritingExceptions {
     public void f() throws SimpleException {
