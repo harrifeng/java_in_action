@@ -19,7 +19,9 @@ public class SweetShop {
         new Candy();
         System.out.println("After creating Candy");
         try {
-            Class.forName("Gum");
+            // if you look for Gum, nothing will be found
+            // the whole package should also list here
+            Class.forName("lang.tij4.typeinfo.Gum");
         } catch(ClassNotFoundException e) {
             System.out.println("Cound't find Gum");
         }
@@ -34,7 +36,7 @@ public class SweetShop {
 // inside main                                    //
 // Loading Candy                                  //
 // After creating Candy                           //
-// Cound't find Gum                               //
+// Loading Gum                                    //
 // After Class.forName("Gum")                     //
 // Loading Cookie                                 //
 // After creatning Cookie                         //

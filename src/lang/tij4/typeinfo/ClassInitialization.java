@@ -31,19 +31,33 @@ public class ClassInitialization {
     public static void main(String[] args) throws Exception{
         Class initable = Initable.class;
         System.out.println("After creating Initable ref");
-        // Does not trigger initialization
+        // We can see the only staticFinal Does NOT trigger initialization
         System.out.println(Initable.staticFinal);
         // Does trigger initialization
         System.out.println(Initable.staticFinal2);
+        System.out.println("--------------------");
 
         // Does trigger initialization:
         System.out.println(Initable2.staticNonFinal);
-        try {
-            Class initable3 = Class.forName("Initable2");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        System.out.println("--------------------");
+        Class initable3 = Class.forName("lang.tij4.typeinfo.Initable3");
+
         System.out.println("After creating Initable3 ref");
         System.out.println(Initable3.staticNonFinal);
     }
 }
+
+////////////////////////////////////////////////////
+// <===================OUTPUT===================> //
+// After creating Initable ref                    //
+// 47                                             //
+// Initializing Initable                          //
+// 258                                            //
+// --------------------                           //
+// Initializing Initable2                         //
+// 147                                            //
+// --------------------                           //
+// Initializing Initable3                         //
+// After creating Initable3 ref                   //
+// 74                                             //
+////////////////////////////////////////////////////
