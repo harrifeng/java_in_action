@@ -2,38 +2,43 @@ package oj.leet.mksl;
 
 import java.util.ArrayList;
 
-class Solution {
+public class Solution {
+
     public ListNode mergeKLists(ArrayList<ListNode> lists) {
-        if (lists == null || lists.size() == 0)
+        if (lists == null || lists.size() == 0) {
             return null;
+        }
         return helper(lists, 0, lists.size() - 1);
     }
 
-    private ListNode helper(ArrayList<ListNode> lists, int l, int r) {
-        if (l < r) {
-            int m = (l + r) / 2;
-            return merge(helper(lists, l, m), helper(lists, m + 1, r));
+    private ListNode helper(ArrayList<ListNode> lists, int left, int right) {
+        if (left < right) {
+            int mid = (right + left) / 2;
+            return mergeTwoLists(helper(lists, left, mid), helper(lists, mid + 1, right));
         }
-        return lists.get(l);
+        return lists.get(left);
     }
 
-    private ListNode merge(ListNode l1, ListNode l2) {
-        ListNode dummy = new ListNode(0);
-        dummy.next = l1;
-        ListNode cur = dummy;
-        while (l1 != null && l2 != null) {
-            if (l1.val < l2.val) {
-                l1 = l1.next;
+    private ListNode mergeTwoLists(ListNode listA, ListNode listB) {
+        ListNode head = new ListNode(-1);
+        ListNode tmp = head;
+        while (listA != null && listB != null) {
+            if (listA.val < listB.val) {
+                head.next = listA;
+                listA = listA.next;
+                head = head.next;
             } else {
-                ListNode next = l2.next;
-                cur.next = l2;
-                l2.next = l1;
-                l2 = next;
+                head.next = listB;
+                listB = listB.next;
+                head = head.next;
             }
-            cur = cur.next;
         }
-        if (l2 != null)
-            cur.next = l2;
-        return dummy.next;
+        if (listA != null) {
+            head.next = listA;
+        }
+        if (listB != null) {
+            head.next = listB;
+        }
+        return tmp.next;
     }
 }
