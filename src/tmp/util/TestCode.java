@@ -1,18 +1,23 @@
 package tmp.util;
 
 
+import java.math.BigInteger;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 public class TestCode {
-    public final String[] STR = {"hello", "world"};
-
+    public static final int i = 23;
+    public static final String str = "hello";
+    public static final Set<Integer> s = new HashSet<Integer>();
     public static void main(String[] args) {
-        TestCode tc = new TestCode();
-        System.out.println(tc.STR[0]);
-        tc.STR[0] = "www";
-        System.out.println(tc.STR[0]);
-
-
+        System.out.println(i);
+        System.out.println(str);
+        s.add(12);
+        s.add(23);
+        System.out.println(s);
     }
 }
+
+
