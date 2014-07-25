@@ -3,23 +3,15 @@ package tmp.jam;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
-import org.apache.http.entity.mime.MultipartEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
 
 import java.io.File;
-import java.io.IOException;
 
-/**
- * Created by i309511 on 7/25/14.
- */
+
 public class Test {
 
     private final static String USER_AGENT = "Mozilla/5.0";
@@ -35,8 +27,6 @@ public class Test {
         uploadFile.addHeader("Authorization", OAUTH);
 
         MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-        //builder.addTextBody("Accept", JSON_TYPE);
-        //builder.addTextBody("Authorization", OAUTH);
         builder.addBinaryBody("file",
                 new File("/Users/i309511/Downloads/messi.jpeg"),
                 ContentType.create("image/jpeg"),
